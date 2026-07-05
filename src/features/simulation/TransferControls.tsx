@@ -1,7 +1,7 @@
 import { useMemo } from 'react'
-import { dijkstra } from '../../algorithms/dijkstra'
+import { dijkstra, reconstructPath } from '../../algorithms/dijkstra'
 import { buildGraph } from '../../algorithms/graph'
-import { reconstructPath } from '../../algorithms/dijkstra'
+import { sendUdpPacket } from '../../engine/simulationLoop'
 import { useNetworkStore } from '../../store/useNetworkStore'
 import { useSimulationStore } from '../../store/useSimulationStore'
 
@@ -63,6 +63,16 @@ export function TransferControls() {
           {summary.text}
         </span>
       )}
+      <button
+        type="button"
+        disabled={!summary?.ok}
+        onClick={sendUdpPacket}
+        className="rounded border border-orange-600 bg-orange-500/10 px-3 py-1 text-xs font-semibold
+          text-orange-400 hover:bg-orange-500/20 disabled:cursor-not-allowed disabled:border-neutral-700
+          disabled:bg-transparent disabled:text-neutral-600"
+      >
+        Send
+      </button>
     </div>
   )
 }

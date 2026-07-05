@@ -11,6 +11,7 @@ import '@xyflow/react/dist/style.css'
 import { pathToLinkIds, shortestRoute } from '../../algorithms/dijkstra'
 import { useNetworkStore } from '../../store/useNetworkStore'
 import { useSimulationStore } from '../../store/useSimulationStore'
+import { PacketOverlay } from '../simulation/PacketOverlay'
 import { NetNodeView, type NetFlowNode } from './nodes/NetNodeView'
 
 const nodeTypes = { net: NetNodeView }
@@ -101,6 +102,7 @@ export function NetworkCanvas() {
       deleteKeyCode={['Backspace', 'Delete']}
     >
       <Background gap={24} />
+      <PacketOverlay />
     </ReactFlow>
   )
 }

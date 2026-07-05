@@ -1,5 +1,6 @@
 import { NetworkCanvas } from './features/network/NetworkCanvas'
 import { ToolPanel } from './features/network/ToolPanel'
+import { SimulationLog } from './features/simulation/SimulationLog'
 import { TransferControls } from './features/simulation/TransferControls'
 
 function App() {
@@ -32,10 +33,8 @@ function App() {
       </div>
 
       {/* Bottom log panel */}
-      <footer className="h-36 shrink-0 overflow-y-auto border-t border-neutral-800 bg-neutral-900 p-3">
-        <p className="text-xs font-semibold tracking-wider text-neutral-500 uppercase">
-          Simulation Log
-        </p>
+      <footer className="h-36 shrink-0 border-t border-neutral-800 bg-neutral-900 p-3">
+        <SimulationLog />
       </footer>
     </div>
   )

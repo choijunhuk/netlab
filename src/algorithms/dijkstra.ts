@@ -1,5 +1,5 @@
 import type { NetLink, NetNode } from '../types/network'
-import { buildGraph, type AdjacencyList } from './graph'
+import { buildGraph, linkBetween, type AdjacencyList } from './graph'
 
 export interface ShortestPathResult {
   dist: Map<string, number>
@@ -68,13 +68,7 @@ export function shortestRoute(
 export function pathToLinkIds(path: string[], links: NetLink[]): string[] {
   const ids: string[] = []
   for (let i = 0; i < path.length - 1; i++) {
-    const a = path[i]
-    const b = path[i + 1]
-    const l = links.find(
-      (x) =>
-        !x.isDown &&
-        ((x.sourceId === a && x.targetId === b) || (x.sourceId === b && x.targetId === a)),
-    )
+    const l = linkBetween(links, path[i], path[i + 1])
     if (l) ids.push(l.id)
   }
   return ids

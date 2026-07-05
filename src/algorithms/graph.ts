@@ -13,6 +13,15 @@ export type AdjacencyList = Map<string, GraphEdge[]>
  * are simply absent from the graph, so every algorithm downstream is
  * failure-oblivious.
  */
+/** Usable (not down) link between two nodes, in either orientation. */
+export function linkBetween(links: NetLink[], a: string, b: string): NetLink | undefined {
+  return links.find(
+    (l) =>
+      !l.isDown &&
+      ((l.sourceId === a && l.targetId === b) || (l.sourceId === b && l.targetId === a)),
+  )
+}
+
 export function buildGraph(nodes: NetNode[], links: NetLink[]): AdjacencyList {
   const graph: AdjacencyList = new Map()
   for (const n of nodes) {
