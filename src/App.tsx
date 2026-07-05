@@ -1,5 +1,7 @@
 import { NetworkCanvas } from './features/network/NetworkCanvas'
 import { PropertyPanel } from './features/network/PropertyPanel'
+import { useNetworkStore } from './store/useNetworkStore'
+import { DEMO_SCENARIO, applyScenario } from './utils/scenario'
 import { ToolPanel } from './features/network/ToolPanel'
 import { SimulationLog } from './features/simulation/SimulationLog'
 import { TransferControls } from './features/simulation/TransferControls'
@@ -23,6 +25,7 @@ function App() {
         {/* Main canvas */}
         <main className="relative min-w-0 flex-1">
           <NetworkCanvas />
+          <EmptyCanvasHint />
         </main>
 
         {/* Right property panel */}
@@ -35,6 +38,25 @@ function App() {
       <footer className="h-36 shrink-0 border-t border-neutral-800 bg-neutral-900 p-3">
         <SimulationLog />
       </footer>
+    </div>
+  )
+}
+
+function EmptyCanvasHint() {
+  const empty = useNetworkStore((s) => s.nodes.length === 0)
+  if (!empty) return null
+  return (
+    <div className="pointer-events-none absolute inset-0 z-10 flex flex-col items-center justify-center gap-3">
+      <p className="text-sm text-neutral-500">
+        Add nodes from the left panel, connect them in link mode, then send a packet.
+      </p>
+      <button
+        type="button"
+        onClick={() => applyScenario(DEMO_SCENARIO)}
+        className="pointer-events-auto rounded border border-neutral-600 px-4 py-2 text-sm text-neutral-300 hover:border-neutral-400 hover:bg-neutral-800"
+      >
+        Load demo topology
+      </button>
     </div>
   )
 }

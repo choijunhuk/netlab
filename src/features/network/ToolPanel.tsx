@@ -1,7 +1,9 @@
+import { useRef } from 'react'
 import type { NodeType } from '../../types/network'
 import { setRngSeed } from '../../engine/simulationLoop'
 import { useNetworkStore } from '../../store/useNetworkStore'
 import { useSimulationStore } from '../../store/useSimulationStore'
+import { DEMO_SCENARIO, applyScenario, exportToFile, importFromFile } from '../../utils/scenario'
 
 const NODE_BUTTONS: { type: NodeType; label: string; dot: string }[] = [
   { type: 'client', label: 'Client', dot: 'bg-sky-500' },
@@ -53,6 +55,59 @@ export function ToolPanel() {
         Loss seed
       </p>
       <SeedInput />
+
+      <p className="mt-4 text-xs font-semibold tracking-wider text-neutral-500 uppercase">
+        Scenario
+      </p>
+      <ScenarioControls />
+    </div>
+  )
+}
+
+const SCENARIO_BTN =
+  'rounded border border-neutral-700 px-3 py-1.5 text-left text-sm hover:border-neutral-500 hover:bg-neutral-800'
+
+function ScenarioControls() {
+  const fileRef = useRef<HTMLInputElement>(null)
+  const addLog = useSimulationStore((s) => s.addLog)
+  const replaceAll = useNetworkStore((s) => s.replaceAll)
+
+  return (
+    <div className="flex flex-col gap-2">
+      <button
+        type="button"
+        className={SCENARIO_BTN}
+        title="§12 demo: direct route + detour via Router 3"
+        onClick={() => applyScenario(DEMO_SCENARIO)}
+      >
+        Load demo topology
+      </button>
+      <button type="button" className={SCENARIO_BTN} onClick={exportToFile}>
+        Export JSON
+      </button>
+      <button type="button" className={SCENARIO_BTN} onClick={() => fileRef.current?.click()}>
+        Import JSON
+      </button>
+      <button
+        type="button"
+        className={SCENARIO_BTN}
+        onClick={() => replaceAll([], [], { client: 0, router: 0, server: 0 })}
+      >
+        Clear canvas
+      </button>
+      <input
+        ref={fileRef}
+        type="file"
+        accept="application/json"
+        className="hidden"
+        onChange={async (e) => {
+          const file = e.target.files?.[0]
+          if (!file) return
+          const err = await importFromFile(file)
+          if (err) addLog('error', `Import failed: ${err}`)
+          e.target.value = ''
+        }}
+      />
     </div>
   )
 }
