@@ -1,7 +1,7 @@
 import { useMemo } from 'react'
 import { dijkstra, reconstructPath } from '../../algorithms/dijkstra'
 import { buildGraph } from '../../algorithms/graph'
-import { sendUdpPacket } from '../../engine/simulationLoop'
+import { sendTcpTransfer, sendUdpPacket } from '../../engine/simulationLoop'
 import { useNetworkStore } from '../../store/useNetworkStore'
 import { useSimulationStore } from '../../store/useSimulationStore'
 
@@ -41,6 +41,8 @@ export function TransferControls() {
   const destId = useSimulationStore((s) => s.transferDestId)
   const setSource = useSimulationStore((s) => s.setTransferSource)
   const setDest = useSimulationStore((s) => s.setTransferDest)
+  const protocol = useSimulationStore((s) => s.protocol)
+  const setProtocol = useSimulationStore((s) => s.setProtocol)
 
   const summary = useMemo(() => {
     const valid = (id: string | null) => id !== null && nodes.some((n) => n.id === id)
@@ -63,10 +65,26 @@ export function TransferControls() {
           {summary.text}
         </span>
       )}
+      <div className="flex overflow-hidden rounded border border-neutral-700">
+        {(['udp', 'tcp'] as const).map((p) => (
+          <button
+            key={p}
+            type="button"
+            onClick={() => setProtocol(p)}
+            className={`px-2 py-1 text-xs font-semibold uppercase ${
+              protocol === p
+                ? 'bg-neutral-700 text-neutral-100'
+                : 'text-neutral-500 hover:text-neutral-300'
+            }`}
+          >
+            {p}
+          </button>
+        ))}
+      </div>
       <button
         type="button"
         disabled={!summary?.ok}
-        onClick={sendUdpPacket}
+        onClick={protocol === 'udp' ? sendUdpPacket : sendTcpTransfer}
         className="rounded border border-orange-600 bg-orange-500/10 px-3 py-1 text-xs font-semibold
           text-orange-400 hover:bg-orange-500/20 disabled:cursor-not-allowed disabled:border-neutral-700
           disabled:bg-transparent disabled:text-neutral-600"

@@ -12,6 +12,7 @@ export interface Packet {
   progress: number // 0..1 within the current link
   status: PacketStatus
   retryCount: number
+  sessionId?: string // TCP: owning tcpSession
 }
 
 export interface LogEntry {

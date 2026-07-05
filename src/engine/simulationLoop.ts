@@ -7,6 +7,13 @@ import { useSimulationStore } from '../store/useSimulationStore'
 import type { LogEntry, Packet } from '../types/simulation'
 import { DEFAULT_RNG_SEED, LOST_PACKET_FADE_END, MAX_FRAME_DELTA_MS } from '../constants'
 import { mulberry32 } from './rng'
+import {
+  checkTcpTimeouts,
+  onTcpAckDelivered,
+  onTcpDataDelivered,
+  startTcpTransfer,
+  tcpSessionsActive,
+} from './tcpSession'
 
 let rng = mulberry32(DEFAULT_RNG_SEED)
 
@@ -60,6 +67,21 @@ export function sendUdpPacket(): void {
   startLoop()
 }
 
+/** Start a stop-and-wait TCP transfer between the selected endpoints. */
+export function sendTcpTransfer(): void {
+  const sim = useSimulationStore.getState()
+  const { nodes, links } = useNetworkStore.getState()
+  const { transferSourceId: src, transferDestId: dst } = sim
+  if (!src || !dst || src === dst) return
+  const out = startTcpTransfer({ nodes, links }, sim.tick, src, dst)
+  useSimulationStore.setState((s) => ({
+    packets: [...s.packets, ...out.packets],
+    logs: [...s.logs, ...out.logs],
+    isRunning: true,
+  }))
+  startLoop()
+}
+
 /** Advance every active packet by deltaMs. Exported for unit tests. */
 export function stepSimulation(deltaMs: number): void {
   const sim = useSimulationStore.getState()
@@ -105,19 +127,34 @@ export function stepSimulation(deltaMs: number): void {
     // hop complete
     const hopIndex = p.hopIndex + 1
     if (hopIndex >= p.path.length - 1) {
-      log('info', `${tag} delivered to ${label(p.destId)}`)
+      if (p.protocol === 'tcp') {
+        const out =
+          p.kind === 'data'
+            ? onTcpDataDelivered({ nodes, links }, tick, p)
+            : onTcpAckDelivered({ nodes, links }, tick, p)
+        survivors.push(...out.packets)
+        newLogs.push(...out.logs)
+      } else {
+        log('info', `${tag} delivered to ${label(p.destId)}`)
+      }
       continue
     }
     survivors.push({ ...p, hopIndex, progress: 0 })
   }
 
+  // TCP timers fire even when nothing is in flight (packet lost → retransmit)
+  const timeoutOut = checkTcpTimeouts({ nodes, links }, tick)
+  survivors.push(...timeoutOut.packets)
+  newLogs.push(...timeoutOut.logs)
+
+  const stillActive = survivors.length > 0 || tcpSessionsActive()
   useSimulationStore.setState((s) => ({
     tick,
     packets: survivors,
-    isRunning: survivors.length > 0,
+    isRunning: stillActive,
     logs: newLogs.length ? [...s.logs, ...newLogs] : s.logs,
   }))
-  if (survivors.length === 0) stopLoop()
+  if (!stillActive) stopLoop()
 }
 
 let rafId: number | null = null

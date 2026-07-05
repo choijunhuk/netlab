@@ -8,9 +8,11 @@ interface SimulationState {
   packets: Packet[]
   logs: LogEntry[]
   rngSeed: number // display only — the RNG itself lives in engine/simulationLoop
+  protocol: 'udp' | 'tcp'
   transferSourceId: string | null
   transferDestId: string | null
 
+  setProtocol: (p: 'udp' | 'tcp') => void
   setTransferSource: (id: string | null) => void
   setTransferDest: (id: string | null) => void
   addLog: (level: LogEntry['level'], message: string) => void
@@ -23,6 +25,8 @@ export const useSimulationStore = create<SimulationState>((set) => ({
   packets: [],
   logs: [],
   rngSeed: DEFAULT_RNG_SEED,
+  protocol: 'udp',
+  setProtocol: (p) => set({ protocol: p }),
   transferSourceId: null,
   transferDestId: null,
 
