@@ -5,7 +5,16 @@ import { linkBetween } from '../algorithms/graph'
 import { useNetworkStore } from '../store/useNetworkStore'
 import { useSimulationStore } from '../store/useSimulationStore'
 import type { LogEntry, Packet } from '../types/simulation'
-import { MAX_FRAME_DELTA_MS } from '../constants'
+import { DEFAULT_RNG_SEED, LOST_PACKET_FADE_END, MAX_FRAME_DELTA_MS } from '../constants'
+import { mulberry32 } from './rng'
+
+let rng = mulberry32(DEFAULT_RNG_SEED)
+
+/** Reset the loss RNG — same seed reproduces the same loss pattern. */
+export function setRngSeed(seed: number): void {
+  rng = mulberry32(seed)
+  useSimulationStore.setState({ rngSeed: seed })
+}
 
 function label(nodeId: string): string {
   return useNetworkStore.getState().nodes.find((n) => n.id === nodeId)?.label ?? nodeId
@@ -64,11 +73,27 @@ export function stepSimulation(deltaMs: number): void {
   for (const p of sim.packets) {
     const from = p.path[p.hopIndex]
     const to = p.path[p.hopIndex + 1]
+    const tag = `[${p.protocol.toUpperCase()}]`
+
+    // a lost packet only exists to finish its fade-out animation
+    if (p.status === 'lost') {
+      const progress = p.progress + deltaMs / 200 // fixed fade speed, delay-independent
+      if (progress < LOST_PACKET_FADE_END) survivors.push({ ...p, progress })
+      continue
+    }
+
     const link = linkBetween(links, from, to)
     const toNodeDown = nodes.find((n) => n.id === to)?.isDown ?? true
     if (!link || toNodeDown) {
       // topology changed under the packet's feet — it dies where it stands (§6.6)
-      log('warn', `[${p.protocol.toUpperCase()}] packet dropped: ${label(from)} → ${label(to)} is down`)
+      log('warn', `${tag} packet dropped: ${label(from)} → ${label(to)} is down`)
+      continue
+    }
+
+    // loss is judged once, when the packet starts crossing a link (§6.4)
+    if (p.progress === 0 && rng() < link.lossRate) {
+      log('warn', `${tag} packet lost on ${label(from)} → ${label(to)}`)
+      survivors.push({ ...p, status: 'lost', progress: 0.01 })
       continue
     }
 
@@ -80,7 +105,7 @@ export function stepSimulation(deltaMs: number): void {
     // hop complete
     const hopIndex = p.hopIndex + 1
     if (hopIndex >= p.path.length - 1) {
-      log('info', `[${p.protocol.toUpperCase()}] delivered to ${label(p.destId)}`)
+      log('info', `${tag} delivered to ${label(p.destId)}`)
       continue
     }
     survivors.push({ ...p, hopIndex, progress: 0 })

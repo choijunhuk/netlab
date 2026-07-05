@@ -56,9 +56,11 @@ export function NetworkCanvas() {
           type: 'straight',
           selected: selectedLinkIds.includes(l.id),
           animated: onPath,
-          style: onPath
-            ? { stroke: 'var(--color-amber-400)', strokeWidth: 2.5 }
-            : { stroke: 'var(--color-neutral-600)', strokeWidth: 2 },
+          style: l.isDown
+            ? { stroke: 'var(--color-red-900)', strokeWidth: 2, strokeDasharray: '4 4' }
+            : onPath
+              ? { stroke: 'var(--color-amber-400)', strokeWidth: 2.5 }
+              : { stroke: 'var(--color-neutral-600)', strokeWidth: 2 },
         }
       }),
     [links, selectedLinkIds, pathLinkIds],

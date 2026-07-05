@@ -1,5 +1,7 @@
 import type { NodeType } from '../../types/network'
+import { setRngSeed } from '../../engine/simulationLoop'
 import { useNetworkStore } from '../../store/useNetworkStore'
+import { useSimulationStore } from '../../store/useSimulationStore'
 
 const NODE_BUTTONS: { type: NodeType; label: string; dot: string }[] = [
   { type: 'client', label: 'Client', dot: 'bg-sky-500' },
@@ -46,6 +48,27 @@ export function ToolPanel() {
         </p>
       )}
       <p className="mt-2 text-xs text-neutral-600">Delete/⌫ removes selection</p>
+
+      <p className="mt-4 text-xs font-semibold tracking-wider text-neutral-500 uppercase">
+        Loss seed
+      </p>
+      <SeedInput />
     </div>
+  )
+}
+
+function SeedInput() {
+  const seed = useSimulationStore((s) => s.rngSeed)
+  return (
+    <input
+      type="number"
+      title="Same seed reproduces the same packet-loss pattern"
+      className="w-full rounded border border-neutral-700 bg-neutral-800 px-2 py-1 font-mono text-xs text-neutral-200"
+      value={seed}
+      onChange={(e) => {
+        const v = Number(e.target.value)
+        if (!Number.isNaN(v)) setRngSeed(v)
+      }}
+    />
   )
 }

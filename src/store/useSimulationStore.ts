@@ -1,4 +1,5 @@
 import { create } from 'zustand'
+import { DEFAULT_RNG_SEED } from '../constants'
 import type { LogEntry, Packet } from '../types/simulation'
 
 interface SimulationState {
@@ -6,6 +7,7 @@ interface SimulationState {
   isRunning: boolean
   packets: Packet[]
   logs: LogEntry[]
+  rngSeed: number // display only — the RNG itself lives in engine/simulationLoop
   transferSourceId: string | null
   transferDestId: string | null
 
@@ -20,6 +22,7 @@ export const useSimulationStore = create<SimulationState>((set) => ({
   isRunning: false,
   packets: [],
   logs: [],
+  rngSeed: DEFAULT_RNG_SEED,
   transferSourceId: null,
   transferDestId: null,
 

@@ -28,6 +28,20 @@ export function PacketOverlay() {
         if (!a || !b) return null
         const x = a.x + (b.x - a.x) * p.progress
         const y = a.y + (b.y - a.y) * p.progress
+        if (p.status === 'lost') {
+          return (
+            <div
+              key={p.id}
+              className="pointer-events-none absolute font-mono text-sm font-bold text-red-500"
+              style={{
+                transform: `translate(${x - 6}px, ${y - 10}px)`,
+                opacity: Math.max(0, 1 - p.progress * 2),
+              }}
+            >
+              ✕
+            </div>
+          )
+        }
         return (
           <div
             key={p.id}

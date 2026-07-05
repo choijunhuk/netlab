@@ -1,7 +1,7 @@
 import { beforeEach, describe, expect, it } from 'vitest'
 import { useNetworkStore } from '../store/useNetworkStore'
 import { useSimulationStore } from '../store/useSimulationStore'
-import { sendUdpPacket, stepSimulation } from './simulationLoop'
+import { sendUdpPacket, setRngSeed, stepSimulation } from './simulationLoop'
 
 const netInitial = useNetworkStore.getInitialState()
 const simInitial = useSimulationStore.getInitialState()
@@ -64,6 +64,32 @@ describe('stepSimulation', () => {
     const sim = useSimulationStore.getState()
     expect(sim.packets).toHaveLength(0)
     expect(sim.logs.at(-1)?.message).toContain('dropped')
+  })
+
+  it('loses packets on a lossRate=1 link and fades them out', () => {
+    buildChain()
+    setRngSeed(1)
+    const l = useNetworkStore.getState().links[0]
+    useNetworkStore.getState().updateLink(l.id, { lossRate: 1 })
+    sendUdpPacket()
+
+    stepSimulation(10) // loss judged at hop start
+    let sim = useSimulationStore.getState()
+    expect(sim.packets[0].status).toBe('lost')
+    expect(sim.logs.at(-1)?.message).toContain('lost')
+
+    stepSimulation(200) // fade completes → packet removed
+    sim = useSimulationStore.getState()
+    expect(sim.packets).toHaveLength(0)
+    expect(sim.isRunning).toBe(false)
+  })
+
+  it('never loses packets when lossRate is 0', () => {
+    buildChain()
+    setRngSeed(1)
+    sendUdpPacket()
+    for (let i = 0; i < 30; i++) stepSimulation(10)
+    expect(useSimulationStore.getState().logs.at(-1)?.message).toContain('delivered')
   })
 
   it('refuses to send when no route exists', () => {

@@ -40,6 +40,8 @@ interface NetworkState {
   selectedLinkIds: string[]
 
   addNode: (type: NodeType) => void
+  updateNode: (id: string, patch: Partial<NetNode>) => void
+  updateLink: (id: string, patch: Partial<NetLink>) => void
   moveNode: (id: string, position: { x: number; y: number }) => void
   removeNodes: (ids: string[]) => void
   removeLinks: (ids: string[]) => void
@@ -71,6 +73,12 @@ export const useNetworkStore = create<NetworkState>((set) => ({
       }
       return { nodes: [...s.nodes, node], counters: { ...s.counters, [type]: seq } }
     }),
+
+  updateNode: (id, patch) =>
+    set((s) => ({ nodes: s.nodes.map((n) => (n.id === id ? { ...n, ...patch } : n)) })),
+
+  updateLink: (id, patch) =>
+    set((s) => ({ links: s.links.map((l) => (l.id === id ? { ...l, ...patch } : l)) })),
 
   moveNode: (id, position) =>
     set((s) => ({ nodes: s.nodes.map((n) => (n.id === id ? { ...n, position } : n)) })),
