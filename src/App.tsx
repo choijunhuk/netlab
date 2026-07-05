@@ -1,3 +1,6 @@
+import { NetworkCanvas } from './features/network/NetworkCanvas'
+import { ToolPanel } from './features/network/ToolPanel'
+
 function App() {
   return (
     <div className="flex h-screen flex-col bg-neutral-950 text-neutral-200">
@@ -10,14 +13,12 @@ function App() {
       <div className="flex min-h-0 flex-1">
         {/* Left tool panel */}
         <aside className="w-44 shrink-0 border-r border-neutral-800 bg-neutral-900 p-3">
-          <p className="text-xs font-semibold tracking-wider text-neutral-500 uppercase">Tools</p>
+          <ToolPanel />
         </aside>
 
-        {/* Main canvas — React Flow mounts here in step 2 */}
+        {/* Main canvas */}
         <main className="relative min-w-0 flex-1">
-          <div className="flex h-full items-center justify-center text-sm text-neutral-600">
-            canvas
-          </div>
+          <NetworkCanvas />
         </main>
 
         {/* Right property panel */}
