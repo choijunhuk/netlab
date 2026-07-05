@@ -1,4 +1,5 @@
 import { NetworkCanvas } from './features/network/NetworkCanvas'
+import { PropertyPanel } from './features/network/PropertyPanel'
 import { ToolPanel } from './features/network/ToolPanel'
 import { SimulationLog } from './features/simulation/SimulationLog'
 import { TransferControls } from './features/simulation/TransferControls'
@@ -25,10 +26,8 @@ function App() {
         </main>
 
         {/* Right property panel */}
-        <aside className="w-64 shrink-0 border-l border-neutral-800 bg-neutral-900 p-3">
-          <p className="text-xs font-semibold tracking-wider text-neutral-500 uppercase">
-            Properties
-          </p>
+        <aside className="w-64 shrink-0 overflow-y-auto border-l border-neutral-800 bg-neutral-900 p-3">
+          <PropertyPanel />
         </aside>
       </div>
 
