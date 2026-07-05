@@ -1,0 +1,7 @@
+{
+  "tool_name": "Read",
+  "tool_input_preview": "{\"file_path\":\"/Users/choi/Desktop/project/.playwright-mcp/netlab-step1.png\"}",
+  "error": "File does not exist. Note: your current working directory is /Users/choi/Desktop/project/netlab.",
+  "timestamp": "2026-07-05T03:53:53.185Z",
+  "retry_count": 1
+}
