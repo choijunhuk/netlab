@@ -1,5 +1,5 @@
-import type { NetLink } from '../types/network'
-import type { AdjacencyList } from './graph'
+import type { NetLink, NetNode } from '../types/network'
+import { buildGraph, type AdjacencyList } from './graph'
 
 export interface ShortestPathResult {
   dist: Map<string, number>
@@ -50,6 +50,34 @@ export function dijkstra(
     }
   }
   return { dist, prev }
+}
+
+/** Convenience: topology in, node-id path out (null = unreachable). */
+export function shortestRoute(
+  nodes: NetNode[],
+  links: NetLink[],
+  sourceId: string,
+  destId: string,
+  weight: WeightFn = costWeight,
+): string[] | null {
+  const { prev } = dijkstra(buildGraph(nodes, links), sourceId, weight)
+  return reconstructPath(prev, sourceId, destId)
+}
+
+/** Link ids crossed by a node-id path, for highlighting. */
+export function pathToLinkIds(path: string[], links: NetLink[]): string[] {
+  const ids: string[] = []
+  for (let i = 0; i < path.length - 1; i++) {
+    const a = path[i]
+    const b = path[i + 1]
+    const l = links.find(
+      (x) =>
+        !x.isDown &&
+        ((x.sourceId === a && x.targetId === b) || (x.sourceId === b && x.targetId === a)),
+    )
+    if (l) ids.push(l.id)
+  }
+  return ids
 }
 
 /** Path source→dest as node ids, or null when unreachable. */

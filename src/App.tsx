@@ -1,5 +1,6 @@
 import { NetworkCanvas } from './features/network/NetworkCanvas'
 import { ToolPanel } from './features/network/ToolPanel'
+import { TransferControls } from './features/simulation/TransferControls'
 
 function App() {
   return (
@@ -7,7 +8,8 @@ function App() {
       {/* Top toolbar */}
       <header className="flex h-12 shrink-0 items-center gap-4 border-b border-neutral-800 bg-neutral-900 px-4">
         <span className="font-mono text-sm font-bold tracking-wider text-neutral-100">NetLab</span>
-        {/* algorithm select · TCP/UDP toggle · send controls arrive in step 4+ */}
+        <TransferControls />
+        {/* TCP/UDP toggle + send button arrive in steps 5/8 */}
       </header>
 
       <div className="flex min-h-0 flex-1">

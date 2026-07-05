@@ -8,7 +8,9 @@ import {
   type NodeMouseHandler,
 } from '@xyflow/react'
 import '@xyflow/react/dist/style.css'
+import { pathToLinkIds, shortestRoute } from '../../algorithms/dijkstra'
 import { useNetworkStore } from '../../store/useNetworkStore'
+import { useSimulationStore } from '../../store/useSimulationStore'
 import { NetNodeView, type NetFlowNode } from './nodes/NetNodeView'
 
 const nodeTypes = { net: NetNodeView }
@@ -20,6 +22,15 @@ export function NetworkCanvas() {
   const pendingLinkSource = useNetworkStore((s) => s.pendingLinkSource)
   const selectedNodeIds = useNetworkStore((s) => s.selectedNodeIds)
   const selectedLinkIds = useNetworkStore((s) => s.selectedLinkIds)
+  const transferSourceId = useSimulationStore((s) => s.transferSourceId)
+  const transferDestId = useSimulationStore((s) => s.transferDestId)
+
+  // derived, never stored (§10) — recomputes on any topology change
+  const pathLinkIds = useMemo(() => {
+    if (!transferSourceId || !transferDestId) return new Set<string>()
+    const path = shortestRoute(nodes, links, transferSourceId, transferDestId)
+    return new Set(path ? pathToLinkIds(path, links) : [])
+  }, [nodes, links, transferSourceId, transferDestId])
 
   const rfNodes = useMemo<NetFlowNode[]>(
     () =>
@@ -35,15 +46,21 @@ export function NetworkCanvas() {
 
   const rfEdges = useMemo<Edge[]>(
     () =>
-      links.map((l) => ({
-        id: l.id,
-        source: l.sourceId,
-        target: l.targetId,
-        type: 'straight',
-        selected: selectedLinkIds.includes(l.id),
-        style: { stroke: 'var(--color-neutral-600)', strokeWidth: 2 },
-      })),
-    [links, selectedLinkIds],
+      links.map((l) => {
+        const onPath = pathLinkIds.has(l.id)
+        return {
+          id: l.id,
+          source: l.sourceId,
+          target: l.targetId,
+          type: 'straight',
+          selected: selectedLinkIds.includes(l.id),
+          animated: onPath,
+          style: onPath
+            ? { stroke: 'var(--color-amber-400)', strokeWidth: 2.5 }
+            : { stroke: 'var(--color-neutral-600)', strokeWidth: 2 },
+        }
+      }),
+    [links, selectedLinkIds, pathLinkIds],
   )
 
   const onNodesChange = useCallback((changes: NodeChange<NetFlowNode>[]) => {
