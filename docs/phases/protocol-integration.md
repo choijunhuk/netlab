@@ -1,6 +1,6 @@
 # Protocol workspace integration — Phases 1–9
 
-Status: implemented and verified locally; integration PR and release confirmation are recorded on GitHub and in the release update.
+Status: implemented, locally verified and merged in PR #5 at 2ebaf4cd64f22a23f67bcd947649b24cd209b481. GitHub quality CI34380623648 passed all gates. Version metadata is finalized by the release PR; actual publication is recorded on the GitHub Release.
 
 ## Delivered
 Port editor, device/route/service/link forms, bounded Undo/Redo, six examples, validated JSON and IndexedDB recovery, real Ethernet/ARP/IPv4/ICMP/TCP/UDP/DHCP/DNS/HTTP/PAT, failure controls, virtual-clock playback, actual transmission animation, immutable packet inspection and educational explanations. Existing Dijkstra workspace preserved separately.
