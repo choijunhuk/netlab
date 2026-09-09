@@ -19,6 +19,7 @@ import { ipv4 } from '../domain/ipv4'
 import { diagnose } from '../diagnostics/network'
 import { routesFor, selectRoute } from '../routing/routes'
 import { EventQueue } from './EventQueue'
+import { protocolLabel } from './protocolLabel'
 const BROADCAST = 'ff:ff:ff:ff:ff:ff'
 const LIMIT = 10000
 interface Pending {
@@ -169,6 +170,7 @@ export class Simulation implements SimulationHost {
     return this.document.devices.find((d) => d.id === id)
   }
   private expire(): void {
+    this.flights = this.flights.filter((flight) => flight.arrivalUs > this.nowUs)
     for (const [d, rows] of this.arp)
       this.arp.set(
         d,
@@ -202,6 +204,7 @@ export class Simulation implements SimulationHost {
       ) {
         this.directions.delete(`${link.id}/${link.a.deviceId}/${link.a.interfaceId}`)
         this.directions.delete(`${link.id}/${link.b.deviceId}/${link.b.interfaceId}`)
+        this.flights = this.flights.filter((flight) => flight.linkId !== link.id)
       }
     }
   }
@@ -418,10 +421,7 @@ export class Simulation implements SimulationHost {
     finishes.push(finish)
     this.directions.set(direction, finishes)
     const arrivalUs = finish + Math.ceil(link.latencyMs * 1000)
-    const protocol =
-      'kind' in frame.payload
-        ? 'ARP'
-        : (frame.payload.payload.kind.toUpperCase() as 'ICMP' | 'UDP' | 'TCP')
+    const protocol = 'kind' in frame.payload ? 'ARP' : protocolLabel(frame.payload.payload)
     this.flights.push({
       id: this.id('tx'),
       linkId: link.id,
@@ -463,6 +463,23 @@ export class Simulation implements SimulationHost {
       this.receiveFrame(target.deviceId, target.interfaceId, structuredClone(frame))
     })
   }
+  private hasCarrier(deviceId: string, interfaceId: string): boolean {
+    return this.document.links.some((link) => {
+      if (!link.up) return false
+      const peer =
+        link.a.deviceId === deviceId && link.a.interfaceId === interfaceId
+          ? link.b
+          : link.b.deviceId === deviceId && link.b.interfaceId === interfaceId
+            ? link.a
+            : undefined
+      if (!peer) return false
+      const device = this.device(peer.deviceId)
+      return (
+        !!device?.powered &&
+        device.interfaces.some((port) => port.id === peer.interfaceId && port.up)
+      )
+    })
+  }
   private receiveFrame(deviceId: string, interfaceId: string, frame: EthernetFrame): void {
     const d = this.device(deviceId),
       iface = d?.interfaces.find((i) => i.id === interfaceId)
@@ -487,7 +504,12 @@ export class Simulation implements SimulationHost {
           : 'Flood unknown or broadcast destination',
       })
       for (const port of d.interfaces)
-        if (port.id !== interfaceId && port.up && (!learned || port.id === learned.interfaceId))
+        if (
+          port.id !== interfaceId &&
+          port.up &&
+          (!learned || port.id === learned.interfaceId) &&
+          this.hasCarrier(d.id, port.id)
+        )
           this.emit(d.id, port.id, frame)
       return
     }
@@ -574,7 +596,7 @@ export class Simulation implements SimulationHost {
       return
     }
     this.trace({
-      protocol: packet.payload.kind.toUpperCase() as 'ICMP' | 'UDP' | 'TCP',
+      protocol: protocolLabel(packet.payload),
       type: 'receive',
       deviceId: d.id,
       interfaceId,

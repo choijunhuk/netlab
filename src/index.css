@@ -9,3 +9,10 @@ body {
   font-family: ui-sans-serif, system-ui, -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
+
+.mode-bar { display: flex; align-items: center; gap: 12px; padding: 6px 16px; min-height: 40px; background: #17222c; color: #dfeaf3; border-bottom: 1px solid #344653; font-size: 12px; flex-wrap: wrap; }
+.mode-bar > span { font-weight: 700; margin-right: 8px; }
+.mode-bar button { padding: 4px 10px; border: 1px solid #4c6375; border-radius: 4px; cursor: pointer; }
+.mode-bar button[aria-pressed="true"] { background: #284863; border-color: #81b8de; }
+.mode-bar button:focus-visible { outline: 2px solid #a2d8ff; outline-offset: 2px; }
+.netlab-root > .h-screen { height: calc(100dvh - 40px); }

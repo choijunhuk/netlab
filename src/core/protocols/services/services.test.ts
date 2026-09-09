@@ -491,3 +491,22 @@ describe('opposite-direction backpressure and UDP port demultiplexing', () => {
     },
   )
 })
+
+describe('DNS name normalization', () => {
+  it('matches uppercase configured records and shares cache across case and trailing dot', () => {
+    const a = pc('a', '10.0.0.1'),
+      b = pc('b', '10.0.0.2')
+    a.interfaces[0].dns = '10.0.0.2'
+    b.dnsRecords = { 'EXAMPLE.local.': '10.0.0.3' }
+    const h = harness([a, b])
+    h.host.command('a', 'nslookup ExAmPlE.LoCaL')
+    h.advance(1000)
+    expect(h.tables['dns:a']).toEqual([
+      { hostname: 'example.local', address: '10.0.0.3', expiresAtUs: 60_000_200 },
+    ])
+    h.host.command('a', 'nslookup EXAMPLE.LOCAL.')
+    h.advance(2000)
+    expect(h.sent).toHaveLength(2)
+    expect(h.lines.some((s) => s.includes('DNS cache: example.local = 10.0.0.3'))).toBe(true)
+  })
+})

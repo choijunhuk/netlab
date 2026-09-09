@@ -1,0 +1,22 @@
+{
+  "measuredAt": "2026-09-09T16:59:59.967Z",
+  "machine": "Apple M3 Max",
+  "platform": "darwin/arm64",
+  "node": "v25.9.0",
+  "browser": "153.0.8010.12",
+  "build": "production",
+  "fixture": {
+    "devices": 100,
+    "links": 150,
+    "seed": 42,
+    "pings": 20
+  },
+  "importMs": 98.7019160000001,
+  "interactionP95Ms": 50.986000000000104,
+  "frameP95Ms": 16.799999999999727,
+  "averageFps": 60.3712833932282,
+  "longTasksMs": [],
+  "replies": 20,
+  "browserErrors": [],
+  "limits": "Headless Chromium on this machine; not a physical-device FPS guarantee. Interaction timing includes Playwright dispatch."
+}

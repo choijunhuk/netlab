@@ -10,10 +10,12 @@
     "test": "vitest run",
     "format": "prettier --write src",
     "preview": "vite preview",
-    "typecheck": "tsc -b --pretty false",
+    "typecheck": "tsc -b --pretty false && tsc -p tsconfig.tests.json",
     "test:unit": "vitest run src",
     "test:integration": "vitest run tests/integration",
-    "test:e2e": "playwright test"
+    "test:e2e": "playwright test",
+    "check:core": "node scripts/check-core.mjs",
+    "test:performance": "vitest run tests/performance --reporter=verbose"
   },
   "dependencies": {
     "@xyflow/react": "^12.11.1",
