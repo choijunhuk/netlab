@@ -84,6 +84,7 @@ export class Simulation implements SimulationHost {
   }
   advanceTo(timeUs: number, budget = 10000): number {
     if (!Number.isFinite(timeUs) || timeUs < this.nowUs) return 0
+    timeUs = Math.floor(timeUs)
     let n = 0
     while (n < budget && this.queue.peek() && this.queue.peek()!.time <= timeUs) {
       this.step()

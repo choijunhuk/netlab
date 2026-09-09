@@ -466,3 +466,15 @@ describe('immediate receiver recovery', () => {
     },
   )
 })
+
+it('normalizes fractional animation targets to integer virtual microseconds', () => {
+  const s = new Simulation(fixture())
+  expect(s.advanceTo(10.9)).toBe(0)
+  expect(s.nowUs).toBe(10)
+  s.schedule(0.4, () => {})
+  expect(s.advanceTo(10.99)).toBe(0)
+  expect(s.step()).toBe(true)
+  expect(s.nowUs).toBe(11)
+  expect(s.advanceTo(Number.NaN)).toBe(0)
+  expect(s.nowUs).toBe(11)
+})
