@@ -19,6 +19,7 @@ import { ipv4 } from '../domain/ipv4'
 import { diagnose } from '../diagnostics/network'
 import { routesFor, selectRoute } from '../routing/routes'
 import { EventQueue } from './EventQueue'
+import { protocolLabel } from './protocolLabel'
 const BROADCAST = 'ff:ff:ff:ff:ff:ff'
 const LIMIT = 10000
 interface Pending {
@@ -420,10 +421,7 @@ export class Simulation implements SimulationHost {
     finishes.push(finish)
     this.directions.set(direction, finishes)
     const arrivalUs = finish + Math.ceil(link.latencyMs * 1000)
-    const protocol =
-      'kind' in frame.payload
-        ? 'ARP'
-        : (frame.payload.payload.kind.toUpperCase() as 'ICMP' | 'UDP' | 'TCP')
+    const protocol = 'kind' in frame.payload ? 'ARP' : protocolLabel(frame.payload.payload)
     this.flights.push({
       id: this.id('tx'),
       linkId: link.id,
@@ -576,7 +574,7 @@ export class Simulation implements SimulationHost {
       return
     }
     this.trace({
-      protocol: packet.payload.kind.toUpperCase() as 'ICMP' | 'UDP' | 'TCP',
+      protocol: protocolLabel(packet.payload),
       type: 'receive',
       deviceId: d.id,
       interfaceId,

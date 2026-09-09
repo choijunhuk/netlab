@@ -529,3 +529,28 @@ describe('live transmission projection', () => {
     expect(sim.snapshot().trace.filter((t) => t.type === 'send')).toHaveLength(1)
   })
 })
+
+it.each([
+  [68, 67, 'DHCP'],
+  [67, 68, 'DHCP'],
+  [12000, 53, 'DNS'],
+  [53, 12000, 'DNS'],
+  [12000, 7, 'UDP'],
+] as const)(
+  'labels UDP %i -> %i as %s in live transmission and send/receive trace',
+  (sourcePort, destinationPort, protocol) => {
+    const sim = new Simulation(fixture())
+    sim.sendIp(
+      'a',
+      '255.255.255.255',
+      { kind: 'udp', sourcePort, destinationPort, data: 'payload' },
+      { interfaceId: 'a' },
+    )
+    expect(sim.snapshot().transmissions[0].protocol).toBe(protocol)
+    sim.runUntilIdle()
+    const records = sim.snapshot().trace.filter((t) => t.type === 'send' || t.type === 'receive')
+    expect(records).toHaveLength(2)
+    expect(records.map((t) => t.protocol)).toEqual([protocol, protocol])
+    expect(records[1].after?.payload.kind).toBe('udp')
+  },
+)
