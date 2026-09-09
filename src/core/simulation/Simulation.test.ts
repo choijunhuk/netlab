@@ -425,3 +425,44 @@ describe('trace integrity and queued serialization', () => {
     expect(s.snapshot().trace.find((t) => t.type === 'forward')!.before!.ttl).toBe(64)
   })
 })
+
+describe('immediate receiver recovery', () => {
+  it.each(['interface', 'power'])(
+    'releases both link direction reservations after receiver %s failure',
+    (kind) => {
+      const doc = fixture()
+      doc.links[0].bandwidthMbps = 0.001
+      doc.links[0].queueCapacity = 1
+      const received: string[] = []
+      const sim = new Simulation(doc, [
+        {
+          receive: (_host, _device, packet) => {
+            received.push(packet.payload.data)
+            return true
+          },
+        },
+      ])
+      const send = (data: string) =>
+        sim.sendIp(
+          'a',
+          '255.255.255.255',
+          { kind: 'udp', sourcePort: 1, destinationPort: 2, data },
+          { interfaceId: 'a' },
+        )
+      send('x'.repeat(1000))
+      send('y'.repeat(1000))
+      if (kind === 'interface') {
+        sim.setInterfaceState('b', 'b', false)
+        sim.setInterfaceState('b', 'b', true)
+      } else {
+        sim.setPower('b', false)
+        sim.setPower('b', true)
+      }
+      send('fresh')
+      expect(sim.snapshot().trace.some((t) => t.reason === 'tail-drop')).toBe(false)
+      expect(sim.snapshot().transmissions.at(-1)?.startUs).toBe(0)
+      sim.runUntilIdle()
+      expect(received).toEqual(['fresh'])
+    },
+  )
+})

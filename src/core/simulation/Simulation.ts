@@ -192,8 +192,17 @@ export class Simulation implements SimulationHost {
     )
     for (const pending of this.pending.keys())
       if (pending.startsWith(`${key}/`)) this.pending.delete(pending)
-    for (const direction of this.directions.keys())
-      if (direction.endsWith(`/${key}`)) this.directions.delete(direction)
+    // Every reservation on an attached link targets or originates at this endpoint.
+    // Its failure invalidates both directions, including the peer's transmit queue.
+    for (const link of this.document.links) {
+      if (
+        (link.a.deviceId === deviceId && link.a.interfaceId === interfaceId) ||
+        (link.b.deviceId === deviceId && link.b.interfaceId === interfaceId)
+      ) {
+        this.directions.delete(`${link.id}/${link.a.deviceId}/${link.a.interfaceId}`)
+        this.directions.delete(`${link.id}/${link.b.deviceId}/${link.b.interfaceId}`)
+      }
+    }
   }
   setLinkState(id: string, up: boolean): void {
     const link = this.document.links.find((l) => l.id === id)
