@@ -8,6 +8,7 @@ import type {
 } from '../../contracts'
 
 const SECOND = 1_000_000
+const normalizeHostname = (name: string) => name.toLowerCase().replace(/\.$/, '')
 const bytes = (s: string) => new TextEncoder().encode(s).length
 const ipNumber = (s: string) => s.split('.').reduce((n, v) => n * 256 + Number(v), 0)
 const numberIp = (n: number) => [24, 16, 8, 0].map((s) => (n >>> s) & 255).join('.')
@@ -200,7 +201,7 @@ export function createServicesExtension(): ProtocolExtension {
       done(hostname)
       return
     }
-    hostname = hostname.toLowerCase()
+    hostname = normalizeHostname(hostname)
     const found = cache.get(`${id}|${hostname}`)
     if (found && found.expiresAtUs > h.nowUs) {
       h.print(id, `DNS cache: ${hostname} = ${found.address}`)
@@ -377,6 +378,8 @@ export function createServicesExtension(): ProtocolExtension {
       deviceId: id,
       interfaceId: iface,
       protocol: 'DHCP',
+      packetId: packet.id,
+      flowId: packet.flowId,
       type: e.type,
       message: `DHCP ${e.type} ${e.client ?? ''}`,
     })
@@ -562,7 +565,10 @@ export function createServicesExtension(): ProtocolExtension {
           typeof e.hostname === 'string' &&
           device(h, id).dnsRecords
         ) {
-          const address = device(h, id).dnsRecords![e.hostname.toLowerCase()]
+          const hostname = normalizeHostname(e.hostname)
+          const address = Object.entries(device(h, id).dnsRecords!).find(
+            ([name]) => normalizeHostname(name) === hostname,
+          )?.[1]
           udp(
             h,
             id,
@@ -580,6 +586,8 @@ export function createServicesExtension(): ProtocolExtension {
           h.trace({
             deviceId: id,
             protocol: 'DNS',
+            packetId: packet.id,
+            flowId: packet.flowId,
             type: address ? 'answer' : 'nxdomain',
             message: address ?? `NXDOMAIN ${e.hostname}`,
           })
@@ -591,7 +599,8 @@ export function createServicesExtension(): ProtocolExtension {
             q.server === packet.source &&
             q.port === p.destinationPort &&
             p.sourcePort === 53 &&
-            q.hostname === e.hostname &&
+            typeof e.hostname === 'string' &&
+            q.hostname === normalizeHostname(e.hostname) &&
             ['answer', 'nxdomain'].includes(e.type)
           ) {
             queries.delete(e.tx)
