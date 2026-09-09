@@ -324,6 +324,14 @@ export function createServicesExtension(): ProtocolExtension {
         sendTcp(h, c, ['ACK'])
         return
       }
+      const service = device(h, id).services
+      const responds = service?.tcpEcho === c.localPort || (service?.http && c.localPort === 80)
+      // With one response slot, leave the request unconsumed until that slot frees.
+      // ACK the current receive boundary so the peer retains and retries its range.
+      if (responds && c.pending) {
+        sendTcp(h, c, ['ACK'])
+        return
+      }
       c.receiveNext += bytes(p.data) + Number(p.flags.includes('FIN'))
       sendTcp(h, c, ['ACK'])
       if (p.data) {
@@ -531,11 +539,23 @@ export function createServicesExtension(): ProtocolExtension {
       }
       if (p.kind !== 'udp') return false
       const e = envelope(p)
-      if (e?.service === 'dhcp') {
+      if (
+        e?.service === 'dhcp' &&
+        ((p.destinationPort === 67 && p.sourcePort === 68 && device(h, id).dhcp?.enabled) ||
+          (p.destinationPort === 68 &&
+            p.sourcePort === 67 &&
+            dhcpRequests.get(e.tx)?.device === id))
+      ) {
         receiveDhcp(h, id, packet, p, e, iface)
         return true
       }
-      if (e?.service === 'dns') {
+      if (
+        e?.service === 'dns' &&
+        (p.destinationPort === 53 ||
+          (p.sourcePort === 53 &&
+            queries.get(e.tx)?.device === id &&
+            queries.get(e.tx)?.port === p.destinationPort))
+      ) {
         if (
           p.destinationPort === 53 &&
           e.type === 'query' &&

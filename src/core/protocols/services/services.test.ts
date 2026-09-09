@@ -446,3 +446,48 @@ describe('DHCP transaction loss and TCP handshake loss recovery', () => {
     expect(h.tables['tcp:b'][0].state).toBe('ESTABLISHED')
   })
 })
+
+describe('opposite-direction backpressure and UDP port demultiplexing', () => {
+  it('retains a second request while the first echo response awaits retransmission', () => {
+    const b = pc('b', '10.0.0.2')
+    b.services = { tcpEcho: 7 }
+    const h = harness([pc('a', '10.0.0.1'), b])
+    h.host.command('a', 'tcp-connect 10.0.0.2 7')
+    h.advance(1000)
+    const id = String(h.tables['tcp:a'][0].id)
+    let dropped = false
+    h.setDrop((p) => {
+      if (
+        !dropped &&
+        p.source === '10.0.0.2' &&
+        p.payload.kind === 'tcp' &&
+        p.payload.data === 'first'
+      ) {
+        dropped = true
+        return true
+      }
+      return false
+    })
+    h.host.command('a', `tcp-send ${id} first`)
+    h.advance(2000)
+    h.host.command('a', `tcp-send ${id} second`)
+    h.advance(3_000_000)
+    for (const text of ['first', 'second'])
+      for (const peer of ['a', 'b'])
+        expect(
+          h.lines.filter((s) => s.startsWith(`${peer}:`) && s.endsWith(`received: ${text}`)),
+        ).toHaveLength(1)
+  })
+  it.each(['dns', 'dhcp'])(
+    'echoes arbitrary %s-shaped JSON on the configured echo port',
+    (service) => {
+      const b = pc('b', '10.0.0.2')
+      b.services = { udpEcho: 7 }
+      const h = harness([pc('a', '10.0.0.1'), b])
+      const data = JSON.stringify({ service, type: 'query', tx: 'x' })
+      h.host.command('a', `udp-send 10.0.0.2 7 ${data}`)
+      h.advance(1000)
+      expect(h.lines).toContain(`a: UDP reply: ${data}`)
+    },
+  )
+})
