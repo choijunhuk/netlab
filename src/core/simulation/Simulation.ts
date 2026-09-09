@@ -463,6 +463,23 @@ export class Simulation implements SimulationHost {
       this.receiveFrame(target.deviceId, target.interfaceId, structuredClone(frame))
     })
   }
+  private hasCarrier(deviceId: string, interfaceId: string): boolean {
+    return this.document.links.some((link) => {
+      if (!link.up) return false
+      const peer =
+        link.a.deviceId === deviceId && link.a.interfaceId === interfaceId
+          ? link.b
+          : link.b.deviceId === deviceId && link.b.interfaceId === interfaceId
+            ? link.a
+            : undefined
+      if (!peer) return false
+      const device = this.device(peer.deviceId)
+      return (
+        !!device?.powered &&
+        device.interfaces.some((port) => port.id === peer.interfaceId && port.up)
+      )
+    })
+  }
   private receiveFrame(deviceId: string, interfaceId: string, frame: EthernetFrame): void {
     const d = this.device(deviceId),
       iface = d?.interfaces.find((i) => i.id === interfaceId)
@@ -487,7 +504,12 @@ export class Simulation implements SimulationHost {
           : 'Flood unknown or broadcast destination',
       })
       for (const port of d.interfaces)
-        if (port.id !== interfaceId && port.up && (!learned || port.id === learned.interfaceId))
+        if (
+          port.id !== interfaceId &&
+          port.up &&
+          (!learned || port.id === learned.interfaceId) &&
+          this.hasCarrier(d.id, port.id)
+        )
           this.emit(d.id, port.id, frame)
       return
     }

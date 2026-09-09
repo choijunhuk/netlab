@@ -554,3 +554,33 @@ it.each([
     expect(records[1].after?.payload.kind).toBe('udp')
   },
 )
+
+it('floods only connected operational ports on an eight-port switch', () => {
+  const doc = fixture()
+  const sw = device(
+    'sw',
+    Array.from({ length: 8 }, (_, n) => iface(String.fromCharCode(104 + n))),
+    'switch',
+  )
+  doc.devices.push(sw)
+  const template = doc.links[0]
+  doc.links = ['a', 'b'].map((id, n) => ({
+    ...template,
+    id: `l${n}`,
+    a: { deviceId: id, interfaceId: id },
+    b: { deviceId: 'sw', interfaceId: sw.interfaces[n].id },
+  }))
+  const sim = new Simulation(doc)
+  ping(sim)
+  expect(replies(sim)).toHaveLength(1)
+  expect(sim.snapshot().trace.filter((t) => t.type === 'drop')).toEqual([])
+  expect(sim.snapshot().trace.some((t) => t.type === 'switch-flood')).toBe(true)
+})
+
+it('still reports a genuine endpoint send on a disconnected interface', () => {
+  const doc = fixture()
+  doc.links = []
+  const sim = new Simulation(doc)
+  ping(sim)
+  expect(sim.snapshot().trace.some((t) => t.reason === 'link-down-or-unconnected')).toBe(true)
+})
