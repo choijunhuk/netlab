@@ -30,3 +30,10 @@
 - Fresh local gates: 131 tests, 8 Chromium E2E scenarios, strict typecheck, lint, core boundaries and production build passed.
 - Stress evidence: 100 devices, 150 links, 20/20 replies, zero browser errors; environment-specific metrics and screenshots committed.
 - Full implementation/review evidence and known simplifications are documented. Integration PR and final release remain pending until their actual GitHub confirmation.
+
+## Integration merged; release preparation
+- PR #5: https://github.com/choijunhuk/netlab/pull/5
+- Merge SHA: 2ebaf4cd64f22a23f67bcd947649b24cd209b481 at 2026-09-09T17:05:24Z.
+- CI: https://github.com/choijunhuk/netlab/actions/runs/34380623648 — netlab-quality passed in57s including production Chromium workflows.
+- Version1.0.0 package and lockfile metadata prepared; fresh merged-code typecheck and131 tests passed.
+- Release PR records final status; its actual merge SHA and the tag target are recorded in the PR comment/GitHub Release, avoiding recursive documentation commits.
