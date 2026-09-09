@@ -160,7 +160,10 @@ function Workspace() {
   }
   const add = (
     kind: DeviceKind,
-    position = { x: 100 + document.devices.length * 30, y: 100 + document.devices.length * 25 },
+    position = {
+      x: 80 + (document.devices.length % 3) * 300,
+      y: 80 + Math.floor(document.devices.length / 3) * 360,
+    },
   ) => {
     const d = createDevice(
       kind,
@@ -168,7 +171,10 @@ function Workspace() {
       position,
       document.links.map((l) => l.id),
     )
-    if (replace({ ...document, devices: [...document.devices, d] })) setSelected(d.id)
+    if (replace({ ...document, devices: [...document.devices, d] })) {
+      setSelected(d.id)
+      requestAnimationFrame(() => flow.fitView({ padding: 0.25 }))
+    }
   }
   const protect = () =>
     !dirty ||
@@ -523,7 +529,11 @@ function Workspace() {
           }}
         >
           <div className="lab-canvas-meta">
-            <span>
+            <span
+              data-testid="runtime-clock"
+              aria-label="Simulation clock"
+              data-time-us={snapshot.nowUs}
+            >
               {running ? 'Running' : 'Paused'} · {(snapshot.nowUs / 1000000).toFixed(3)} s
             </span>
             <span>
