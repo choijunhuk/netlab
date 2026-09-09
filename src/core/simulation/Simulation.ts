@@ -169,6 +169,7 @@ export class Simulation implements SimulationHost {
     return this.document.devices.find((d) => d.id === id)
   }
   private expire(): void {
+    this.flights = this.flights.filter((flight) => flight.arrivalUs > this.nowUs)
     for (const [d, rows] of this.arp)
       this.arp.set(
         d,
@@ -202,6 +203,7 @@ export class Simulation implements SimulationHost {
       ) {
         this.directions.delete(`${link.id}/${link.a.deviceId}/${link.a.interfaceId}`)
         this.directions.delete(`${link.id}/${link.b.deviceId}/${link.b.interfaceId}`)
+        this.flights = this.flights.filter((flight) => flight.linkId !== link.id)
       }
     }
   }

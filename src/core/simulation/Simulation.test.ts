@@ -161,9 +161,11 @@ describe('Ethernet, ARP and IPv4', () => {
           t.after.payload.type === 'echo-request',
       )
     expect(request?.after?.ttl).toBe(62)
-    const packets = s.snapshot().transmissions.filter((t) => t.frame.etherType === 'IPv4')
-    expect(packets[0].frame.source).toBe(fixture(true).devices[0].interfaces[0].mac)
-    expect(packets.find((t) => t.fromDeviceId === 's')?.frame.source).toBe(
+    const packets = s
+      .snapshot()
+      .trace.filter((t) => t.type === 'send' && t.frame?.etherType === 'IPv4')
+    expect(packets[0].frame!.source).toBe(fixture(true).devices[0].interfaces[0].mac)
+    expect(packets.find((t) => t.deviceId === 's')?.frame?.source).toBe(
       fixture(true).devices[3].interfaces[1].mac,
     )
   })
@@ -212,8 +214,8 @@ describe('Ethernet, ARP and IPv4', () => {
     expect(
       s
         .snapshot()
-        .transmissions.filter((t) => t.toDeviceId === 'c')
-        .every((t) => t.frame.etherType === 'ARP'),
+        .trace.filter((t) => t.type === 'send' && t.linkId === 'l2')
+        .every((t) => t.frame?.etherType === 'ARP'),
     ).toBe(true)
     s.advanceTo(310000000)
     expect(s.snapshot().mac.sw).toHaveLength(0)
@@ -237,7 +239,7 @@ describe('link conditions and extension boundaries', () => {
     const s = new Simulation(doc)
     ping(s)
     expect(replies(s)).toHaveLength(0)
-    expect(s.snapshot().transmissions).toHaveLength(3)
+    expect(s.snapshot().trace.filter((t) => t.type === 'send')).toHaveLength(3)
     expect(s.snapshot().trace.some((t) => t.reason?.startsWith('arp-timeout'))).toBe(true)
     expect(s.snapshot().terminal.some((t) => t.text.includes('timed out'))).toBe(true)
   })
@@ -315,7 +317,9 @@ describe('link conditions and extension boundaries', () => {
     s.reset()
     ping(s)
     const second = s.snapshot()
-    expect(second.transmissions).toEqual(first.transmissions)
+    expect(second.trace.filter((t) => t.type === 'send').map((t) => t.frame)).toEqual(
+      first.trace.filter((t) => t.type === 'send').map((t) => t.frame),
+    )
     expect(second.arp).toEqual(first.arp)
     s.setPower('b', false)
     ping(s)
@@ -401,8 +405,9 @@ describe('trace integrity and queued serialization', () => {
           { kind: 'udp', sourcePort: 1, destinationPort: 2, data: 'x'.repeat(100) },
           { interfaceId: 'a' },
         )
+      const transmissions = s.snapshot().transmissions
       s.runUntilIdle()
-      return s.snapshot()
+      return { ...s.snapshot(), transmissions }
     }
     const a = run()
     expect(a).toEqual(run())
@@ -477,4 +482,50 @@ it('normalizes fractional animation targets to integer virtual microseconds', ()
   expect(s.nowUs).toBe(11)
   expect(s.advanceTo(Number.NaN)).toBe(0)
   expect(s.nowUs).toBe(11)
+})
+
+describe('live transmission projection', () => {
+  it.each(['link', 'interface', 'power'])(
+    'removes active and queued flights immediately on %s failure and restoration',
+    (kind) => {
+      const doc = fixture()
+      doc.links[0].bandwidthMbps = 0.001
+      const sim = new Simulation(doc)
+      for (let n = 0; n < 2; n++)
+        sim.sendIp(
+          'a',
+          '255.255.255.255',
+          { kind: 'udp', sourcePort: 1, destinationPort: 2, data: 'x'.repeat(1000) },
+          { interfaceId: 'a' },
+        )
+      expect(sim.snapshot().transmissions).toHaveLength(2)
+      const change = (up: boolean) => {
+        if (kind === 'link') sim.setLinkState('l0', up)
+        else if (kind === 'interface') sim.setInterfaceState('b', 'b', up)
+        else sim.setPower('b', up)
+      }
+      change(false)
+      expect(sim.snapshot().transmissions).toHaveLength(0)
+      change(true)
+      expect(sim.snapshot().transmissions).toHaveLength(0)
+      expect(sim.snapshot().trace.filter((t) => t.type === 'send')).toHaveLength(2)
+      sim.runUntilIdle()
+      expect(sim.snapshot().transmissions).toHaveLength(0)
+    },
+  )
+  it('prunes completed flights while retaining immutable trace history', () => {
+    const sim = new Simulation(fixture())
+    sim.sendIp(
+      'a',
+      '255.255.255.255',
+      { kind: 'udp', sourcePort: 1, destinationPort: 2, data: 'hello' },
+      { interfaceId: 'a' },
+    )
+    const arrival = sim.snapshot().transmissions[0].arrivalUs
+    sim.advanceTo(arrival - 1)
+    expect(sim.snapshot().transmissions).toHaveLength(1)
+    sim.advanceTo(arrival)
+    expect(sim.snapshot().transmissions).toHaveLength(0)
+    expect(sim.snapshot().trace.filter((t) => t.type === 'send')).toHaveLength(1)
+  })
 })
