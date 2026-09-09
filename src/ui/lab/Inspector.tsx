@@ -1,3 +1,5 @@
+import { explainTrace } from '../../application/explainTrace'
+import { routingRows } from '../../application/routingRows'
 import { useState } from 'react'
 import type {
   DeviceConfig,
@@ -507,6 +509,7 @@ export function Inspector({
             {event.protocol} · {(event.timeUs / 1000).toFixed(2)} ms
           </p>
           <p>{event.message}</p>
+          <p className="lab-muted">{explainTrace(event)}</p>
           <p className="lab-muted">
             이벤트 발생 시점의 헤더입니다. 아래 현재 상태 테이블과 구분하세요.
           </p>
@@ -587,20 +590,7 @@ export function Inspector({
           </details>
           <details>
             <summary>Routing table</summary>
-            <Table
-              rows={[
-                ...live.interfaces
-                  .filter((p) => p.ip && p.prefix !== undefined)
-                  .map((p) => ({
-                    network: connectedNetwork(p.ip!, p.prefix!),
-                    prefix: p.prefix,
-                    interface: p.name,
-                    type: 'connected',
-                    gateway: '—',
-                  })),
-                ...live.routes.map((r) => ({ ...r, type: 'static' })),
-              ]}
-            />
+            <Table rows={routingRows(live)} />
           </details>
           {Object.entries(snapshot.tables)
             .filter(([key]) => key.endsWith(`:${live.id}`))
@@ -614,9 +604,4 @@ export function Inspector({
       )}
     </>
   )
-}
-function connectedNetwork(ip: string, prefix: number) {
-  const address = ip.split('.').reduce((n, part) => (n << 8) | Number(part), 0)
-  const network = address & (prefix === 0 ? 0 : -1 << (32 - prefix))
-  return [24, 16, 8, 0].map((shift) => (network >>> shift) & 255).join('.')
 }

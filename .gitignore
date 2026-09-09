@@ -22,3 +22,11 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Browser verification artifacts (selected evidence is copied into docs).
+/playwright-report/
+/test-results/
+/.superpowers/
+/.worktrees/
+
+/.omx/

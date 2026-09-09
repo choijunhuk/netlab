@@ -1,14 +1,29 @@
 import { useEffect, useState } from 'react'
-import { BaseEdge, EdgeLabelRenderer, Handle, Position, getStraightPath } from '@xyflow/react'
+import {
+  BaseEdge,
+  EdgeLabelRenderer,
+  Handle,
+  Position,
+  getStraightPath,
+  useUpdateNodeInternals,
+} from '@xyflow/react'
 import type { Edge, EdgeProps, Node, NodeProps } from '@xyflow/react'
 import type { DeviceConfig, LinkConfig, Transmission } from '../../core/contracts'
-export type DeviceNode = Node<{ device: DeviceConfig; highlighted: boolean }, 'device'>
+export type DeviceNode = Node<
+  { device: DeviceConfig; highlighted: boolean; connectedPorts: string[]; rightPorts: string[] },
+  'device'
+>
 export type WireEdge = Edge<
   { link: LinkConfig; packets: Transmission[]; nowUs: number; inspect: (p: Transmission) => void },
   'wire'
 >
 export function DeviceView({ data, selected }: NodeProps<DeviceNode>) {
   const d = data.device
+  const [expanded, setExpanded] = useState(false)
+  const updateInternals = useUpdateNodeInternals()
+  const ports = d.interfaces.filter(
+    (port, index) => expanded || index < 2 || !!port.ip || data.connectedPorts.includes(port.id),
+  )
   return (
     <div
       className={`lab-device ${selected || data.highlighted ? 'is-selected' : ''} ${d.powered ? '' : 'is-off'}`}
@@ -20,11 +35,19 @@ export function DeviceView({ data, selected }: NodeProps<DeviceNode>) {
         <span>{d.powered ? '●' : '○'}</span>
       </div>
       <strong>{d.name}</strong>
-      {d.interfaces.map((p, i) => (
+      {ports.map((p, i) => (
         <div className="lab-port" key={p.id}>
           <Handle
             type="source"
-            position={Position.Left}
+            position={
+              (
+                data.connectedPorts.includes(p.id)
+                  ? data.rightPorts.includes(p.id)
+                  : d.kind === 'pc' || d.interfaces.indexOf(p) % 2 === 1
+              )
+                ? Position.Right
+                : Position.Left
+            }
             id={p.id}
             style={{ top: 65 + i * 29 }}
             aria-label={`${d.name} ${p.name} port`}
@@ -42,6 +65,19 @@ export function DeviceView({ data, selected }: NodeProps<DeviceNode>) {
           <i title={p.up ? 'Interface up' : 'Interface down'}>{p.up ? '●' : '○'}</i>
         </div>
       ))}
+      {d.interfaces.length > 2 && (
+        <button
+          type="button"
+          className="lab-ports-toggle nodrag nopan"
+          onClick={(event) => {
+            event.stopPropagation()
+            setExpanded(!expanded)
+            requestAnimationFrame(() => updateInternals(d.id))
+          }}
+        >
+          {expanded ? '사용 포트만 보기' : `전체 ${d.interfaces.length}개 포트`}
+        </button>
+      )}
     </div>
   )
 }

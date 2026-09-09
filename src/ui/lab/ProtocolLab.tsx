@@ -7,6 +7,8 @@ import {
   ReactFlowProvider,
   applyNodeChanges,
   useReactFlow,
+  useNodesInitialized,
+  useUpdateNodeInternals,
 } from '@xyflow/react'
 import type { Connection, NodeChange } from '@xyflow/react'
 import '@xyflow/react/dist/style.css'
@@ -31,7 +33,7 @@ const kinds: DeviceKind[] = ['pc', 'server', 'switch', 'router']
 const initialExample = () => examples.find((e) => e.id === 'two-routers') ?? examples[0]
 const initial = () => structuredClone(initialExample().document)
 
-function Workspace() {
+function Workspace({ active }: { active: boolean }) {
   const [document, setDocument] = useState<NetworkDocument>(initial)
   const [simulation, setSimulation] = useState(() => createSimulation(document))
   const [snapshot, setSnapshot] = useState(() => simulation.snapshot())
@@ -54,16 +56,35 @@ function Workspace() {
     past: [],
     future: [],
   })
+  const [measurements, setMeasurements] = useState<
+    Record<string, { width?: number; height?: number }>
+  >({})
   const [positions, setPositions] = useState<Record<string, { x: number; y: number }>>({})
   const file = useRef<HTMLInputElement>(null)
   const latest = useRef(document)
   const flow = useReactFlow<DeviceNode, WireEdge>()
+  const nodesInitialized = useNodesInitialized()
+  const updateInternals = useUpdateNodeInternals()
+  useEffect(() => {
+    updateInternals(document.devices.map((device) => device.id))
+  }, [document, updateInternals])
+  useEffect(() => {
+    if (!active) setRunning(false)
+  }, [active])
+  const fitPending = useRef(true)
+  useEffect(() => {
+    if (nodesInitialized && fitPending.current && document.devices.length) {
+      fitPending.current = false
+      void flow.fitView({ padding: 0.15 })
+    }
+  }, [nodesInitialized, document, flow])
   latest.current = document
   const refresh = useCallback(() => setSnapshot(simulation.snapshot()), [simulation])
   const replace = useCallback((next: NetworkDocument, record = true) => {
     try {
       const valid = validateDocument(next)
       if (record) setHistory((h) => ({ past: [...h.past.slice(-49), latest.current], future: [] }))
+      fitPending.current = true
       const engine = createSimulation(valid)
       setRunning(false)
       setDocument(valid)
@@ -173,7 +194,6 @@ function Workspace() {
     )
     if (replace({ ...document, devices: [...document.devices, d] })) {
       setSelected(d.id)
-      requestAnimationFrame(() => flow.fitView({ padding: 0.25 }))
     }
   }
   const protect = () =>
@@ -200,10 +220,23 @@ function Workspace() {
     id: d.id,
     type: 'device',
     position: positions[d.id] ?? d.position,
+    measured: measurements[d.id],
     selected: d.id === selected,
     data: {
       device: snapshot.devices.find((live) => live.id === d.id) ?? d,
       highlighted: event?.deviceId === d.id,
+      rightPorts: document.links.flatMap((link) => {
+        const local =
+          link.a.deviceId === d.id ? link.a : link.b.deviceId === d.id ? link.b : undefined
+        if (!local) return []
+        const peer = link.a === local ? link.b : link.a
+        const other = document.devices.find((device) => device.id === peer.deviceId)
+        return other && other.position.x >= d.position.x ? [local.interfaceId] : []
+      }),
+      connectedPorts: document.links
+        .flatMap((link) => [link.a, link.b])
+        .filter((endpoint) => endpoint.deviceId === d.id)
+        .map((endpoint) => endpoint.interfaceId),
     },
   }))
   const edges: WireEdge[] = document.links.map((l) => ({
@@ -225,6 +258,9 @@ function Workspace() {
   }))
   const onChanges = (changes: NodeChange<DeviceNode>[]) => {
     const changed = applyNodeChanges(changes, nodes)
+    setMeasurements(
+      Object.fromEntries(changed.filter((n) => n.measured).map((n) => [n.id, n.measured!])),
+    )
     setPositions(Object.fromEntries(changed.map((n) => [n.id, n.position])))
   }
   const connect = (c: Connection) => {
@@ -314,7 +350,6 @@ function Workspace() {
                 setSource(example.sourceDeviceId)
                 setCommand(example.command)
                 setNotice(example.description)
-                requestAnimationFrame(() => flow.fitView({ padding: 0.25 }))
               }
             }}
           >
@@ -471,7 +506,7 @@ function Workspace() {
               onClick={() => add(kind)}
               className="lab-equipment-item"
             >
-              <span>
+              <span aria-hidden="true">
                 {kind === 'router' ? '⇄' : kind === 'switch' ? '⋈' : kind === 'server' ? '▤' : '▣'}
               </span>
               Add {kind === 'pc' ? 'PC' : kind}
@@ -569,8 +604,6 @@ function Workspace() {
               setEvent(undefined)
             }}
             deleteKeyCode={null}
-            fitView
-            fitViewOptions={{ padding: 0.25 }}
             minZoom={0.15}
             maxZoom={2}
             colorMode="dark"
@@ -737,10 +770,10 @@ function Workspace() {
     </div>
   )
 }
-export default function ProtocolLab() {
+export default function ProtocolLab({ active = true }: { active?: boolean }) {
   return (
     <ReactFlowProvider>
-      <Workspace />
+      <Workspace active={active} />
     </ReactFlowProvider>
   )
 }

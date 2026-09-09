@@ -86,6 +86,14 @@ function build(
 ): Example {
   const document: NetworkDocument = { schemaVersion: 1, name, seed: 42, devices: [], links: [] }
   const { source, command } = configure(document)
+  // Keep example devices apart at the rendered 210px node width.
+  ;[...document.devices]
+    .sort((a, b) => a.position.x - b.position.x)
+    .forEach((device, index) => {
+      const row = Math.floor(index / 3)
+      device.position.x = (row % 2 === 0 ? index % 3 : 2 - (index % 3)) * 330
+      device.position.y = 100 + row * 280
+    })
   return {
     id,
     name,

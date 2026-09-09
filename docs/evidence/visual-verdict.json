@@ -1,0 +1,10 @@
+{
+  "score": 93,
+  "verdict": "pass",
+  "category_match": true,
+  "differences": [],
+  "suggestions": [],
+  "reasoning": "Criterion-based review against DESIGN.md: six readable devices, visible directed port links, real ping/trace results, narrow-screen panels, no overlapping nodes. No reference image supplied.",
+  "next_actions": [],
+  "reference": "docs/DESIGN.md"
+}

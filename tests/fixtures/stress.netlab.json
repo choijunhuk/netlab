@@ -1,0 +1,7109 @@
+{
+  "schemaVersion": 1,
+  "name": "100 routers / 150 links",
+  "seed": 42,
+  "devices": [
+    {
+      "id": "r0",
+      "name": "Router 0",
+      "kind": "router",
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "powered": true,
+      "routes": [],
+      "interfaces": [
+        {
+          "id": "r0-eth0",
+          "name": "eth0",
+          "mac": "02:00:00:00:00:00",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.142",
+          "prefix": 30
+        },
+        {
+          "id": "r0-eth1",
+          "name": "eth1",
+          "mac": "02:00:00:00:00:01",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.1",
+          "prefix": 30
+        },
+        {
+          "id": "r0-eth2",
+          "name": "eth2",
+          "mac": "02:00:00:00:00:02",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.145",
+          "prefix": 30
+        },
+        {
+          "id": "r0-eth3",
+          "name": "eth3",
+          "mac": "02:00:00:00:00:03",
+          "mode": "static",
+          "up": true
+        }
+      ]
+    },
+    {
+      "id": "r1",
+      "name": "Router 1",
+      "kind": "router",
+      "position": {
+        "x": 300,
+        "y": 0
+      },
+      "powered": true,
+      "routes": [],
+      "interfaces": [
+        {
+          "id": "r1-eth0",
+          "name": "eth0",
+          "mac": "02:00:00:00:01:00",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.2",
+          "prefix": 30
+        },
+        {
+          "id": "r1-eth1",
+          "name": "eth1",
+          "mac": "02:00:00:00:01:01",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.5",
+          "prefix": 30
+        },
+        {
+          "id": "r1-eth2",
+          "name": "eth2",
+          "mac": "02:00:00:00:01:02",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.149",
+          "prefix": 30
+        },
+        {
+          "id": "r1-eth3",
+          "name": "eth3",
+          "mac": "02:00:00:00:01:03",
+          "mode": "static",
+          "up": true
+        }
+      ]
+    },
+    {
+      "id": "r2",
+      "name": "Router 2",
+      "kind": "router",
+      "position": {
+        "x": 600,
+        "y": 0
+      },
+      "powered": true,
+      "routes": [],
+      "interfaces": [
+        {
+          "id": "r2-eth0",
+          "name": "eth0",
+          "mac": "02:00:00:00:02:00",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.6",
+          "prefix": 30
+        },
+        {
+          "id": "r2-eth1",
+          "name": "eth1",
+          "mac": "02:00:00:00:02:01",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.9",
+          "prefix": 30
+        },
+        {
+          "id": "r2-eth2",
+          "name": "eth2",
+          "mac": "02:00:00:00:02:02",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.153",
+          "prefix": 30
+        },
+        {
+          "id": "r2-eth3",
+          "name": "eth3",
+          "mac": "02:00:00:00:02:03",
+          "mode": "static",
+          "up": true
+        }
+      ]
+    },
+    {
+      "id": "r3",
+      "name": "Router 3",
+      "kind": "router",
+      "position": {
+        "x": 900,
+        "y": 0
+      },
+      "powered": true,
+      "routes": [],
+      "interfaces": [
+        {
+          "id": "r3-eth0",
+          "name": "eth0",
+          "mac": "02:00:00:00:03:00",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.10",
+          "prefix": 30
+        },
+        {
+          "id": "r3-eth1",
+          "name": "eth1",
+          "mac": "02:00:00:00:03:01",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.13",
+          "prefix": 30
+        },
+        {
+          "id": "r3-eth2",
+          "name": "eth2",
+          "mac": "02:00:00:00:03:02",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.157",
+          "prefix": 30
+        },
+        {
+          "id": "r3-eth3",
+          "name": "eth3",
+          "mac": "02:00:00:00:03:03",
+          "mode": "static",
+          "up": true
+        }
+      ]
+    },
+    {
+      "id": "r4",
+      "name": "Router 4",
+      "kind": "router",
+      "position": {
+        "x": 1200,
+        "y": 0
+      },
+      "powered": true,
+      "routes": [],
+      "interfaces": [
+        {
+          "id": "r4-eth0",
+          "name": "eth0",
+          "mac": "02:00:00:00:04:00",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.14",
+          "prefix": 30
+        },
+        {
+          "id": "r4-eth1",
+          "name": "eth1",
+          "mac": "02:00:00:00:04:01",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.17",
+          "prefix": 30
+        },
+        {
+          "id": "r4-eth2",
+          "name": "eth2",
+          "mac": "02:00:00:00:04:02",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.161",
+          "prefix": 30
+        },
+        {
+          "id": "r4-eth3",
+          "name": "eth3",
+          "mac": "02:00:00:00:04:03",
+          "mode": "static",
+          "up": true
+        }
+      ]
+    },
+    {
+      "id": "r5",
+      "name": "Router 5",
+      "kind": "router",
+      "position": {
+        "x": 1500,
+        "y": 0
+      },
+      "powered": true,
+      "routes": [],
+      "interfaces": [
+        {
+          "id": "r5-eth0",
+          "name": "eth0",
+          "mac": "02:00:00:00:05:00",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.18",
+          "prefix": 30
+        },
+        {
+          "id": "r5-eth1",
+          "name": "eth1",
+          "mac": "02:00:00:00:05:01",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.21",
+          "prefix": 30
+        },
+        {
+          "id": "r5-eth2",
+          "name": "eth2",
+          "mac": "02:00:00:00:05:02",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.165",
+          "prefix": 30
+        },
+        {
+          "id": "r5-eth3",
+          "name": "eth3",
+          "mac": "02:00:00:00:05:03",
+          "mode": "static",
+          "up": true
+        }
+      ]
+    },
+    {
+      "id": "r6",
+      "name": "Router 6",
+      "kind": "router",
+      "position": {
+        "x": 1800,
+        "y": 0
+      },
+      "powered": true,
+      "routes": [],
+      "interfaces": [
+        {
+          "id": "r6-eth0",
+          "name": "eth0",
+          "mac": "02:00:00:00:06:00",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.22",
+          "prefix": 30
+        },
+        {
+          "id": "r6-eth1",
+          "name": "eth1",
+          "mac": "02:00:00:00:06:01",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.25",
+          "prefix": 30
+        },
+        {
+          "id": "r6-eth2",
+          "name": "eth2",
+          "mac": "02:00:00:00:06:02",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.169",
+          "prefix": 30
+        },
+        {
+          "id": "r6-eth3",
+          "name": "eth3",
+          "mac": "02:00:00:00:06:03",
+          "mode": "static",
+          "up": true
+        }
+      ]
+    },
+    {
+      "id": "r7",
+      "name": "Router 7",
+      "kind": "router",
+      "position": {
+        "x": 2100,
+        "y": 0
+      },
+      "powered": true,
+      "routes": [],
+      "interfaces": [
+        {
+          "id": "r7-eth0",
+          "name": "eth0",
+          "mac": "02:00:00:00:07:00",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.26",
+          "prefix": 30
+        },
+        {
+          "id": "r7-eth1",
+          "name": "eth1",
+          "mac": "02:00:00:00:07:01",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.29",
+          "prefix": 30
+        },
+        {
+          "id": "r7-eth2",
+          "name": "eth2",
+          "mac": "02:00:00:00:07:02",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.173",
+          "prefix": 30
+        },
+        {
+          "id": "r7-eth3",
+          "name": "eth3",
+          "mac": "02:00:00:00:07:03",
+          "mode": "static",
+          "up": true
+        }
+      ]
+    },
+    {
+      "id": "r8",
+      "name": "Router 8",
+      "kind": "router",
+      "position": {
+        "x": 2400,
+        "y": 0
+      },
+      "powered": true,
+      "routes": [],
+      "interfaces": [
+        {
+          "id": "r8-eth0",
+          "name": "eth0",
+          "mac": "02:00:00:00:08:00",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.30",
+          "prefix": 30
+        },
+        {
+          "id": "r8-eth1",
+          "name": "eth1",
+          "mac": "02:00:00:00:08:01",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.33",
+          "prefix": 30
+        },
+        {
+          "id": "r8-eth2",
+          "name": "eth2",
+          "mac": "02:00:00:00:08:02",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.177",
+          "prefix": 30
+        },
+        {
+          "id": "r8-eth3",
+          "name": "eth3",
+          "mac": "02:00:00:00:08:03",
+          "mode": "static",
+          "up": true
+        }
+      ]
+    },
+    {
+      "id": "r9",
+      "name": "Router 9",
+      "kind": "router",
+      "position": {
+        "x": 2700,
+        "y": 0
+      },
+      "powered": true,
+      "routes": [],
+      "interfaces": [
+        {
+          "id": "r9-eth0",
+          "name": "eth0",
+          "mac": "02:00:00:00:09:00",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.34",
+          "prefix": 30
+        },
+        {
+          "id": "r9-eth1",
+          "name": "eth1",
+          "mac": "02:00:00:00:09:01",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.37",
+          "prefix": 30
+        },
+        {
+          "id": "r9-eth2",
+          "name": "eth2",
+          "mac": "02:00:00:00:09:02",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.181",
+          "prefix": 30
+        },
+        {
+          "id": "r9-eth3",
+          "name": "eth3",
+          "mac": "02:00:00:00:09:03",
+          "mode": "static",
+          "up": true
+        }
+      ]
+    },
+    {
+      "id": "r10",
+      "name": "Router 10",
+      "kind": "router",
+      "position": {
+        "x": 0,
+        "y": 200
+      },
+      "powered": true,
+      "routes": [],
+      "interfaces": [
+        {
+          "id": "r10-eth0",
+          "name": "eth0",
+          "mac": "02:00:00:00:0a:00",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.38",
+          "prefix": 30
+        },
+        {
+          "id": "r10-eth1",
+          "name": "eth1",
+          "mac": "02:00:00:00:0a:01",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.41",
+          "prefix": 30
+        },
+        {
+          "id": "r10-eth2",
+          "name": "eth2",
+          "mac": "02:00:00:00:0a:02",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.185",
+          "prefix": 30
+        },
+        {
+          "id": "r10-eth3",
+          "name": "eth3",
+          "mac": "02:00:00:00:0a:03",
+          "mode": "static",
+          "up": true
+        }
+      ]
+    },
+    {
+      "id": "r11",
+      "name": "Router 11",
+      "kind": "router",
+      "position": {
+        "x": 300,
+        "y": 200
+      },
+      "powered": true,
+      "routes": [],
+      "interfaces": [
+        {
+          "id": "r11-eth0",
+          "name": "eth0",
+          "mac": "02:00:00:00:0b:00",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.42",
+          "prefix": 30
+        },
+        {
+          "id": "r11-eth1",
+          "name": "eth1",
+          "mac": "02:00:00:00:0b:01",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.45",
+          "prefix": 30
+        },
+        {
+          "id": "r11-eth2",
+          "name": "eth2",
+          "mac": "02:00:00:00:0b:02",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.189",
+          "prefix": 30
+        },
+        {
+          "id": "r11-eth3",
+          "name": "eth3",
+          "mac": "02:00:00:00:0b:03",
+          "mode": "static",
+          "up": true
+        }
+      ]
+    },
+    {
+      "id": "r12",
+      "name": "Router 12",
+      "kind": "router",
+      "position": {
+        "x": 600,
+        "y": 200
+      },
+      "powered": true,
+      "routes": [],
+      "interfaces": [
+        {
+          "id": "r12-eth0",
+          "name": "eth0",
+          "mac": "02:00:00:00:0c:00",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.46",
+          "prefix": 30
+        },
+        {
+          "id": "r12-eth1",
+          "name": "eth1",
+          "mac": "02:00:00:00:0c:01",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.49",
+          "prefix": 30
+        },
+        {
+          "id": "r12-eth2",
+          "name": "eth2",
+          "mac": "02:00:00:00:0c:02",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.193",
+          "prefix": 30
+        },
+        {
+          "id": "r12-eth3",
+          "name": "eth3",
+          "mac": "02:00:00:00:0c:03",
+          "mode": "static",
+          "up": true
+        }
+      ]
+    },
+    {
+      "id": "r13",
+      "name": "Router 13",
+      "kind": "router",
+      "position": {
+        "x": 900,
+        "y": 200
+      },
+      "powered": true,
+      "routes": [],
+      "interfaces": [
+        {
+          "id": "r13-eth0",
+          "name": "eth0",
+          "mac": "02:00:00:00:0d:00",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.50",
+          "prefix": 30
+        },
+        {
+          "id": "r13-eth1",
+          "name": "eth1",
+          "mac": "02:00:00:00:0d:01",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.53",
+          "prefix": 30
+        },
+        {
+          "id": "r13-eth2",
+          "name": "eth2",
+          "mac": "02:00:00:00:0d:02",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.197",
+          "prefix": 30
+        },
+        {
+          "id": "r13-eth3",
+          "name": "eth3",
+          "mac": "02:00:00:00:0d:03",
+          "mode": "static",
+          "up": true
+        }
+      ]
+    },
+    {
+      "id": "r14",
+      "name": "Router 14",
+      "kind": "router",
+      "position": {
+        "x": 1200,
+        "y": 200
+      },
+      "powered": true,
+      "routes": [],
+      "interfaces": [
+        {
+          "id": "r14-eth0",
+          "name": "eth0",
+          "mac": "02:00:00:00:0e:00",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.54",
+          "prefix": 30
+        },
+        {
+          "id": "r14-eth1",
+          "name": "eth1",
+          "mac": "02:00:00:00:0e:01",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.57",
+          "prefix": 30
+        },
+        {
+          "id": "r14-eth2",
+          "name": "eth2",
+          "mac": "02:00:00:00:0e:02",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.201",
+          "prefix": 30
+        },
+        {
+          "id": "r14-eth3",
+          "name": "eth3",
+          "mac": "02:00:00:00:0e:03",
+          "mode": "static",
+          "up": true
+        }
+      ]
+    },
+    {
+      "id": "r15",
+      "name": "Router 15",
+      "kind": "router",
+      "position": {
+        "x": 1500,
+        "y": 200
+      },
+      "powered": true,
+      "routes": [],
+      "interfaces": [
+        {
+          "id": "r15-eth0",
+          "name": "eth0",
+          "mac": "02:00:00:00:0f:00",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.58",
+          "prefix": 30
+        },
+        {
+          "id": "r15-eth1",
+          "name": "eth1",
+          "mac": "02:00:00:00:0f:01",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.61",
+          "prefix": 30
+        },
+        {
+          "id": "r15-eth2",
+          "name": "eth2",
+          "mac": "02:00:00:00:0f:02",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.205",
+          "prefix": 30
+        },
+        {
+          "id": "r15-eth3",
+          "name": "eth3",
+          "mac": "02:00:00:00:0f:03",
+          "mode": "static",
+          "up": true
+        }
+      ]
+    },
+    {
+      "id": "r16",
+      "name": "Router 16",
+      "kind": "router",
+      "position": {
+        "x": 1800,
+        "y": 200
+      },
+      "powered": true,
+      "routes": [],
+      "interfaces": [
+        {
+          "id": "r16-eth0",
+          "name": "eth0",
+          "mac": "02:00:00:00:10:00",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.62",
+          "prefix": 30
+        },
+        {
+          "id": "r16-eth1",
+          "name": "eth1",
+          "mac": "02:00:00:00:10:01",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.65",
+          "prefix": 30
+        },
+        {
+          "id": "r16-eth2",
+          "name": "eth2",
+          "mac": "02:00:00:00:10:02",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.209",
+          "prefix": 30
+        },
+        {
+          "id": "r16-eth3",
+          "name": "eth3",
+          "mac": "02:00:00:00:10:03",
+          "mode": "static",
+          "up": true
+        }
+      ]
+    },
+    {
+      "id": "r17",
+      "name": "Router 17",
+      "kind": "router",
+      "position": {
+        "x": 2100,
+        "y": 200
+      },
+      "powered": true,
+      "routes": [],
+      "interfaces": [
+        {
+          "id": "r17-eth0",
+          "name": "eth0",
+          "mac": "02:00:00:00:11:00",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.66",
+          "prefix": 30
+        },
+        {
+          "id": "r17-eth1",
+          "name": "eth1",
+          "mac": "02:00:00:00:11:01",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.69",
+          "prefix": 30
+        },
+        {
+          "id": "r17-eth2",
+          "name": "eth2",
+          "mac": "02:00:00:00:11:02",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.213",
+          "prefix": 30
+        },
+        {
+          "id": "r17-eth3",
+          "name": "eth3",
+          "mac": "02:00:00:00:11:03",
+          "mode": "static",
+          "up": true
+        }
+      ]
+    },
+    {
+      "id": "r18",
+      "name": "Router 18",
+      "kind": "router",
+      "position": {
+        "x": 2400,
+        "y": 200
+      },
+      "powered": true,
+      "routes": [],
+      "interfaces": [
+        {
+          "id": "r18-eth0",
+          "name": "eth0",
+          "mac": "02:00:00:00:12:00",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.70",
+          "prefix": 30
+        },
+        {
+          "id": "r18-eth1",
+          "name": "eth1",
+          "mac": "02:00:00:00:12:01",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.73",
+          "prefix": 30
+        },
+        {
+          "id": "r18-eth2",
+          "name": "eth2",
+          "mac": "02:00:00:00:12:02",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.217",
+          "prefix": 30
+        },
+        {
+          "id": "r18-eth3",
+          "name": "eth3",
+          "mac": "02:00:00:00:12:03",
+          "mode": "static",
+          "up": true
+        }
+      ]
+    },
+    {
+      "id": "r19",
+      "name": "Router 19",
+      "kind": "router",
+      "position": {
+        "x": 2700,
+        "y": 200
+      },
+      "powered": true,
+      "routes": [],
+      "interfaces": [
+        {
+          "id": "r19-eth0",
+          "name": "eth0",
+          "mac": "02:00:00:00:13:00",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.74",
+          "prefix": 30
+        },
+        {
+          "id": "r19-eth1",
+          "name": "eth1",
+          "mac": "02:00:00:00:13:01",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.77",
+          "prefix": 30
+        },
+        {
+          "id": "r19-eth2",
+          "name": "eth2",
+          "mac": "02:00:00:00:13:02",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.221",
+          "prefix": 30
+        },
+        {
+          "id": "r19-eth3",
+          "name": "eth3",
+          "mac": "02:00:00:00:13:03",
+          "mode": "static",
+          "up": true
+        }
+      ]
+    },
+    {
+      "id": "r20",
+      "name": "Router 20",
+      "kind": "router",
+      "position": {
+        "x": 0,
+        "y": 400
+      },
+      "powered": true,
+      "routes": [],
+      "interfaces": [
+        {
+          "id": "r20-eth0",
+          "name": "eth0",
+          "mac": "02:00:00:00:14:00",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.78",
+          "prefix": 30
+        },
+        {
+          "id": "r20-eth1",
+          "name": "eth1",
+          "mac": "02:00:00:00:14:01",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.81",
+          "prefix": 30
+        },
+        {
+          "id": "r20-eth2",
+          "name": "eth2",
+          "mac": "02:00:00:00:14:02",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.225",
+          "prefix": 30
+        },
+        {
+          "id": "r20-eth3",
+          "name": "eth3",
+          "mac": "02:00:00:00:14:03",
+          "mode": "static",
+          "up": true
+        }
+      ]
+    },
+    {
+      "id": "r21",
+      "name": "Router 21",
+      "kind": "router",
+      "position": {
+        "x": 300,
+        "y": 400
+      },
+      "powered": true,
+      "routes": [],
+      "interfaces": [
+        {
+          "id": "r21-eth0",
+          "name": "eth0",
+          "mac": "02:00:00:00:15:00",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.82",
+          "prefix": 30
+        },
+        {
+          "id": "r21-eth1",
+          "name": "eth1",
+          "mac": "02:00:00:00:15:01",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.85",
+          "prefix": 30
+        },
+        {
+          "id": "r21-eth2",
+          "name": "eth2",
+          "mac": "02:00:00:00:15:02",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.229",
+          "prefix": 30
+        },
+        {
+          "id": "r21-eth3",
+          "name": "eth3",
+          "mac": "02:00:00:00:15:03",
+          "mode": "static",
+          "up": true
+        }
+      ]
+    },
+    {
+      "id": "r22",
+      "name": "Router 22",
+      "kind": "router",
+      "position": {
+        "x": 600,
+        "y": 400
+      },
+      "powered": true,
+      "routes": [],
+      "interfaces": [
+        {
+          "id": "r22-eth0",
+          "name": "eth0",
+          "mac": "02:00:00:00:16:00",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.86",
+          "prefix": 30
+        },
+        {
+          "id": "r22-eth1",
+          "name": "eth1",
+          "mac": "02:00:00:00:16:01",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.89",
+          "prefix": 30
+        },
+        {
+          "id": "r22-eth2",
+          "name": "eth2",
+          "mac": "02:00:00:00:16:02",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.233",
+          "prefix": 30
+        },
+        {
+          "id": "r22-eth3",
+          "name": "eth3",
+          "mac": "02:00:00:00:16:03",
+          "mode": "static",
+          "up": true
+        }
+      ]
+    },
+    {
+      "id": "r23",
+      "name": "Router 23",
+      "kind": "router",
+      "position": {
+        "x": 900,
+        "y": 400
+      },
+      "powered": true,
+      "routes": [],
+      "interfaces": [
+        {
+          "id": "r23-eth0",
+          "name": "eth0",
+          "mac": "02:00:00:00:17:00",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.90",
+          "prefix": 30
+        },
+        {
+          "id": "r23-eth1",
+          "name": "eth1",
+          "mac": "02:00:00:00:17:01",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.93",
+          "prefix": 30
+        },
+        {
+          "id": "r23-eth2",
+          "name": "eth2",
+          "mac": "02:00:00:00:17:02",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.237",
+          "prefix": 30
+        },
+        {
+          "id": "r23-eth3",
+          "name": "eth3",
+          "mac": "02:00:00:00:17:03",
+          "mode": "static",
+          "up": true
+        }
+      ]
+    },
+    {
+      "id": "r24",
+      "name": "Router 24",
+      "kind": "router",
+      "position": {
+        "x": 1200,
+        "y": 400
+      },
+      "powered": true,
+      "routes": [],
+      "interfaces": [
+        {
+          "id": "r24-eth0",
+          "name": "eth0",
+          "mac": "02:00:00:00:18:00",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.94",
+          "prefix": 30
+        },
+        {
+          "id": "r24-eth1",
+          "name": "eth1",
+          "mac": "02:00:00:00:18:01",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.97",
+          "prefix": 30
+        },
+        {
+          "id": "r24-eth2",
+          "name": "eth2",
+          "mac": "02:00:00:00:18:02",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.241",
+          "prefix": 30
+        },
+        {
+          "id": "r24-eth3",
+          "name": "eth3",
+          "mac": "02:00:00:00:18:03",
+          "mode": "static",
+          "up": true
+        }
+      ]
+    },
+    {
+      "id": "r25",
+      "name": "Router 25",
+      "kind": "router",
+      "position": {
+        "x": 1500,
+        "y": 400
+      },
+      "powered": true,
+      "routes": [],
+      "interfaces": [
+        {
+          "id": "r25-eth0",
+          "name": "eth0",
+          "mac": "02:00:00:00:19:00",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.98",
+          "prefix": 30
+        },
+        {
+          "id": "r25-eth1",
+          "name": "eth1",
+          "mac": "02:00:00:00:19:01",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.101",
+          "prefix": 30
+        },
+        {
+          "id": "r25-eth2",
+          "name": "eth2",
+          "mac": "02:00:00:00:19:02",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.245",
+          "prefix": 30
+        },
+        {
+          "id": "r25-eth3",
+          "name": "eth3",
+          "mac": "02:00:00:00:19:03",
+          "mode": "static",
+          "up": true
+        }
+      ]
+    },
+    {
+      "id": "r26",
+      "name": "Router 26",
+      "kind": "router",
+      "position": {
+        "x": 1800,
+        "y": 400
+      },
+      "powered": true,
+      "routes": [],
+      "interfaces": [
+        {
+          "id": "r26-eth0",
+          "name": "eth0",
+          "mac": "02:00:00:00:1a:00",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.102",
+          "prefix": 30
+        },
+        {
+          "id": "r26-eth1",
+          "name": "eth1",
+          "mac": "02:00:00:00:1a:01",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.105",
+          "prefix": 30
+        },
+        {
+          "id": "r26-eth2",
+          "name": "eth2",
+          "mac": "02:00:00:00:1a:02",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.249",
+          "prefix": 30
+        },
+        {
+          "id": "r26-eth3",
+          "name": "eth3",
+          "mac": "02:00:00:00:1a:03",
+          "mode": "static",
+          "up": true
+        }
+      ]
+    },
+    {
+      "id": "r27",
+      "name": "Router 27",
+      "kind": "router",
+      "position": {
+        "x": 2100,
+        "y": 400
+      },
+      "powered": true,
+      "routes": [],
+      "interfaces": [
+        {
+          "id": "r27-eth0",
+          "name": "eth0",
+          "mac": "02:00:00:00:1b:00",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.106",
+          "prefix": 30
+        },
+        {
+          "id": "r27-eth1",
+          "name": "eth1",
+          "mac": "02:00:00:00:1b:01",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.109",
+          "prefix": 30
+        },
+        {
+          "id": "r27-eth2",
+          "name": "eth2",
+          "mac": "02:00:00:00:1b:02",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.253",
+          "prefix": 30
+        },
+        {
+          "id": "r27-eth3",
+          "name": "eth3",
+          "mac": "02:00:00:00:1b:03",
+          "mode": "static",
+          "up": true
+        }
+      ]
+    },
+    {
+      "id": "r28",
+      "name": "Router 28",
+      "kind": "router",
+      "position": {
+        "x": 2400,
+        "y": 400
+      },
+      "powered": true,
+      "routes": [],
+      "interfaces": [
+        {
+          "id": "r28-eth0",
+          "name": "eth0",
+          "mac": "02:00:00:00:1c:00",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.110",
+          "prefix": 30
+        },
+        {
+          "id": "r28-eth1",
+          "name": "eth1",
+          "mac": "02:00:00:00:1c:01",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.113",
+          "prefix": 30
+        },
+        {
+          "id": "r28-eth2",
+          "name": "eth2",
+          "mac": "02:00:00:00:1c:02",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.2.1",
+          "prefix": 30
+        },
+        {
+          "id": "r28-eth3",
+          "name": "eth3",
+          "mac": "02:00:00:00:1c:03",
+          "mode": "static",
+          "up": true
+        }
+      ]
+    },
+    {
+      "id": "r29",
+      "name": "Router 29",
+      "kind": "router",
+      "position": {
+        "x": 2700,
+        "y": 400
+      },
+      "powered": true,
+      "routes": [],
+      "interfaces": [
+        {
+          "id": "r29-eth0",
+          "name": "eth0",
+          "mac": "02:00:00:00:1d:00",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.114",
+          "prefix": 30
+        },
+        {
+          "id": "r29-eth1",
+          "name": "eth1",
+          "mac": "02:00:00:00:1d:01",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.117",
+          "prefix": 30
+        },
+        {
+          "id": "r29-eth2",
+          "name": "eth2",
+          "mac": "02:00:00:00:1d:02",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.2.5",
+          "prefix": 30
+        },
+        {
+          "id": "r29-eth3",
+          "name": "eth3",
+          "mac": "02:00:00:00:1d:03",
+          "mode": "static",
+          "up": true
+        }
+      ]
+    },
+    {
+      "id": "r30",
+      "name": "Router 30",
+      "kind": "router",
+      "position": {
+        "x": 0,
+        "y": 600
+      },
+      "powered": true,
+      "routes": [],
+      "interfaces": [
+        {
+          "id": "r30-eth0",
+          "name": "eth0",
+          "mac": "02:00:00:00:1e:00",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.118",
+          "prefix": 30
+        },
+        {
+          "id": "r30-eth1",
+          "name": "eth1",
+          "mac": "02:00:00:00:1e:01",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.121",
+          "prefix": 30
+        },
+        {
+          "id": "r30-eth2",
+          "name": "eth2",
+          "mac": "02:00:00:00:1e:02",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.2.9",
+          "prefix": 30
+        },
+        {
+          "id": "r30-eth3",
+          "name": "eth3",
+          "mac": "02:00:00:00:1e:03",
+          "mode": "static",
+          "up": true
+        }
+      ]
+    },
+    {
+      "id": "r31",
+      "name": "Router 31",
+      "kind": "router",
+      "position": {
+        "x": 300,
+        "y": 600
+      },
+      "powered": true,
+      "routes": [],
+      "interfaces": [
+        {
+          "id": "r31-eth0",
+          "name": "eth0",
+          "mac": "02:00:00:00:1f:00",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.122",
+          "prefix": 30
+        },
+        {
+          "id": "r31-eth1",
+          "name": "eth1",
+          "mac": "02:00:00:00:1f:01",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.125",
+          "prefix": 30
+        },
+        {
+          "id": "r31-eth2",
+          "name": "eth2",
+          "mac": "02:00:00:00:1f:02",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.2.13",
+          "prefix": 30
+        },
+        {
+          "id": "r31-eth3",
+          "name": "eth3",
+          "mac": "02:00:00:00:1f:03",
+          "mode": "static",
+          "up": true
+        }
+      ]
+    },
+    {
+      "id": "r32",
+      "name": "Router 32",
+      "kind": "router",
+      "position": {
+        "x": 600,
+        "y": 600
+      },
+      "powered": true,
+      "routes": [],
+      "interfaces": [
+        {
+          "id": "r32-eth0",
+          "name": "eth0",
+          "mac": "02:00:00:00:20:00",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.126",
+          "prefix": 30
+        },
+        {
+          "id": "r32-eth1",
+          "name": "eth1",
+          "mac": "02:00:00:00:20:01",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.129",
+          "prefix": 30
+        },
+        {
+          "id": "r32-eth2",
+          "name": "eth2",
+          "mac": "02:00:00:00:20:02",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.2.17",
+          "prefix": 30
+        },
+        {
+          "id": "r32-eth3",
+          "name": "eth3",
+          "mac": "02:00:00:00:20:03",
+          "mode": "static",
+          "up": true
+        }
+      ]
+    },
+    {
+      "id": "r33",
+      "name": "Router 33",
+      "kind": "router",
+      "position": {
+        "x": 900,
+        "y": 600
+      },
+      "powered": true,
+      "routes": [],
+      "interfaces": [
+        {
+          "id": "r33-eth0",
+          "name": "eth0",
+          "mac": "02:00:00:00:21:00",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.130",
+          "prefix": 30
+        },
+        {
+          "id": "r33-eth1",
+          "name": "eth1",
+          "mac": "02:00:00:00:21:01",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.133",
+          "prefix": 30
+        },
+        {
+          "id": "r33-eth2",
+          "name": "eth2",
+          "mac": "02:00:00:00:21:02",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.2.21",
+          "prefix": 30
+        },
+        {
+          "id": "r33-eth3",
+          "name": "eth3",
+          "mac": "02:00:00:00:21:03",
+          "mode": "static",
+          "up": true
+        }
+      ]
+    },
+    {
+      "id": "r34",
+      "name": "Router 34",
+      "kind": "router",
+      "position": {
+        "x": 1200,
+        "y": 600
+      },
+      "powered": true,
+      "routes": [],
+      "interfaces": [
+        {
+          "id": "r34-eth0",
+          "name": "eth0",
+          "mac": "02:00:00:00:22:00",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.134",
+          "prefix": 30
+        },
+        {
+          "id": "r34-eth1",
+          "name": "eth1",
+          "mac": "02:00:00:00:22:01",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.137",
+          "prefix": 30
+        },
+        {
+          "id": "r34-eth2",
+          "name": "eth2",
+          "mac": "02:00:00:00:22:02",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.2.25",
+          "prefix": 30
+        },
+        {
+          "id": "r34-eth3",
+          "name": "eth3",
+          "mac": "02:00:00:00:22:03",
+          "mode": "static",
+          "up": true
+        }
+      ]
+    },
+    {
+      "id": "r35",
+      "name": "Router 35",
+      "kind": "router",
+      "position": {
+        "x": 1500,
+        "y": 600
+      },
+      "powered": true,
+      "routes": [],
+      "interfaces": [
+        {
+          "id": "r35-eth0",
+          "name": "eth0",
+          "mac": "02:00:00:00:23:00",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.138",
+          "prefix": 30
+        },
+        {
+          "id": "r35-eth1",
+          "name": "eth1",
+          "mac": "02:00:00:00:23:01",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.141",
+          "prefix": 30
+        },
+        {
+          "id": "r35-eth2",
+          "name": "eth2",
+          "mac": "02:00:00:00:23:02",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.2.29",
+          "prefix": 30
+        },
+        {
+          "id": "r35-eth3",
+          "name": "eth3",
+          "mac": "02:00:00:00:23:03",
+          "mode": "static",
+          "up": true
+        }
+      ]
+    },
+    {
+      "id": "r36",
+      "name": "Router 36",
+      "kind": "router",
+      "position": {
+        "x": 1800,
+        "y": 600
+      },
+      "powered": true,
+      "routes": [],
+      "interfaces": [
+        {
+          "id": "r36-eth0",
+          "name": "eth0",
+          "mac": "02:00:00:00:24:00",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.142",
+          "prefix": 30
+        },
+        {
+          "id": "r36-eth1",
+          "name": "eth1",
+          "mac": "02:00:00:00:24:01",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.145",
+          "prefix": 30
+        },
+        {
+          "id": "r36-eth2",
+          "name": "eth2",
+          "mac": "02:00:00:00:24:02",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.2.33",
+          "prefix": 30
+        },
+        {
+          "id": "r36-eth3",
+          "name": "eth3",
+          "mac": "02:00:00:00:24:03",
+          "mode": "static",
+          "up": true
+        }
+      ]
+    },
+    {
+      "id": "r37",
+      "name": "Router 37",
+      "kind": "router",
+      "position": {
+        "x": 2100,
+        "y": 600
+      },
+      "powered": true,
+      "routes": [],
+      "interfaces": [
+        {
+          "id": "r37-eth0",
+          "name": "eth0",
+          "mac": "02:00:00:00:25:00",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.146",
+          "prefix": 30
+        },
+        {
+          "id": "r37-eth1",
+          "name": "eth1",
+          "mac": "02:00:00:00:25:01",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.149",
+          "prefix": 30
+        },
+        {
+          "id": "r37-eth2",
+          "name": "eth2",
+          "mac": "02:00:00:00:25:02",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.2.37",
+          "prefix": 30
+        },
+        {
+          "id": "r37-eth3",
+          "name": "eth3",
+          "mac": "02:00:00:00:25:03",
+          "mode": "static",
+          "up": true
+        }
+      ]
+    },
+    {
+      "id": "r38",
+      "name": "Router 38",
+      "kind": "router",
+      "position": {
+        "x": 2400,
+        "y": 600
+      },
+      "powered": true,
+      "routes": [],
+      "interfaces": [
+        {
+          "id": "r38-eth0",
+          "name": "eth0",
+          "mac": "02:00:00:00:26:00",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.150",
+          "prefix": 30
+        },
+        {
+          "id": "r38-eth1",
+          "name": "eth1",
+          "mac": "02:00:00:00:26:01",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.153",
+          "prefix": 30
+        },
+        {
+          "id": "r38-eth2",
+          "name": "eth2",
+          "mac": "02:00:00:00:26:02",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.2.41",
+          "prefix": 30
+        },
+        {
+          "id": "r38-eth3",
+          "name": "eth3",
+          "mac": "02:00:00:00:26:03",
+          "mode": "static",
+          "up": true
+        }
+      ]
+    },
+    {
+      "id": "r39",
+      "name": "Router 39",
+      "kind": "router",
+      "position": {
+        "x": 2700,
+        "y": 600
+      },
+      "powered": true,
+      "routes": [],
+      "interfaces": [
+        {
+          "id": "r39-eth0",
+          "name": "eth0",
+          "mac": "02:00:00:00:27:00",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.154",
+          "prefix": 30
+        },
+        {
+          "id": "r39-eth1",
+          "name": "eth1",
+          "mac": "02:00:00:00:27:01",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.157",
+          "prefix": 30
+        },
+        {
+          "id": "r39-eth2",
+          "name": "eth2",
+          "mac": "02:00:00:00:27:02",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.2.45",
+          "prefix": 30
+        },
+        {
+          "id": "r39-eth3",
+          "name": "eth3",
+          "mac": "02:00:00:00:27:03",
+          "mode": "static",
+          "up": true
+        }
+      ]
+    },
+    {
+      "id": "r40",
+      "name": "Router 40",
+      "kind": "router",
+      "position": {
+        "x": 0,
+        "y": 800
+      },
+      "powered": true,
+      "routes": [],
+      "interfaces": [
+        {
+          "id": "r40-eth0",
+          "name": "eth0",
+          "mac": "02:00:00:00:28:00",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.158",
+          "prefix": 30
+        },
+        {
+          "id": "r40-eth1",
+          "name": "eth1",
+          "mac": "02:00:00:00:28:01",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.161",
+          "prefix": 30
+        },
+        {
+          "id": "r40-eth2",
+          "name": "eth2",
+          "mac": "02:00:00:00:28:02",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.2.49",
+          "prefix": 30
+        },
+        {
+          "id": "r40-eth3",
+          "name": "eth3",
+          "mac": "02:00:00:00:28:03",
+          "mode": "static",
+          "up": true
+        }
+      ]
+    },
+    {
+      "id": "r41",
+      "name": "Router 41",
+      "kind": "router",
+      "position": {
+        "x": 300,
+        "y": 800
+      },
+      "powered": true,
+      "routes": [],
+      "interfaces": [
+        {
+          "id": "r41-eth0",
+          "name": "eth0",
+          "mac": "02:00:00:00:29:00",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.162",
+          "prefix": 30
+        },
+        {
+          "id": "r41-eth1",
+          "name": "eth1",
+          "mac": "02:00:00:00:29:01",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.165",
+          "prefix": 30
+        },
+        {
+          "id": "r41-eth2",
+          "name": "eth2",
+          "mac": "02:00:00:00:29:02",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.2.53",
+          "prefix": 30
+        },
+        {
+          "id": "r41-eth3",
+          "name": "eth3",
+          "mac": "02:00:00:00:29:03",
+          "mode": "static",
+          "up": true
+        }
+      ]
+    },
+    {
+      "id": "r42",
+      "name": "Router 42",
+      "kind": "router",
+      "position": {
+        "x": 600,
+        "y": 800
+      },
+      "powered": true,
+      "routes": [],
+      "interfaces": [
+        {
+          "id": "r42-eth0",
+          "name": "eth0",
+          "mac": "02:00:00:00:2a:00",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.166",
+          "prefix": 30
+        },
+        {
+          "id": "r42-eth1",
+          "name": "eth1",
+          "mac": "02:00:00:00:2a:01",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.169",
+          "prefix": 30
+        },
+        {
+          "id": "r42-eth2",
+          "name": "eth2",
+          "mac": "02:00:00:00:2a:02",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.2.57",
+          "prefix": 30
+        },
+        {
+          "id": "r42-eth3",
+          "name": "eth3",
+          "mac": "02:00:00:00:2a:03",
+          "mode": "static",
+          "up": true
+        }
+      ]
+    },
+    {
+      "id": "r43",
+      "name": "Router 43",
+      "kind": "router",
+      "position": {
+        "x": 900,
+        "y": 800
+      },
+      "powered": true,
+      "routes": [],
+      "interfaces": [
+        {
+          "id": "r43-eth0",
+          "name": "eth0",
+          "mac": "02:00:00:00:2b:00",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.170",
+          "prefix": 30
+        },
+        {
+          "id": "r43-eth1",
+          "name": "eth1",
+          "mac": "02:00:00:00:2b:01",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.173",
+          "prefix": 30
+        },
+        {
+          "id": "r43-eth2",
+          "name": "eth2",
+          "mac": "02:00:00:00:2b:02",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.2.61",
+          "prefix": 30
+        },
+        {
+          "id": "r43-eth3",
+          "name": "eth3",
+          "mac": "02:00:00:00:2b:03",
+          "mode": "static",
+          "up": true
+        }
+      ]
+    },
+    {
+      "id": "r44",
+      "name": "Router 44",
+      "kind": "router",
+      "position": {
+        "x": 1200,
+        "y": 800
+      },
+      "powered": true,
+      "routes": [],
+      "interfaces": [
+        {
+          "id": "r44-eth0",
+          "name": "eth0",
+          "mac": "02:00:00:00:2c:00",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.174",
+          "prefix": 30
+        },
+        {
+          "id": "r44-eth1",
+          "name": "eth1",
+          "mac": "02:00:00:00:2c:01",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.177",
+          "prefix": 30
+        },
+        {
+          "id": "r44-eth2",
+          "name": "eth2",
+          "mac": "02:00:00:00:2c:02",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.2.65",
+          "prefix": 30
+        },
+        {
+          "id": "r44-eth3",
+          "name": "eth3",
+          "mac": "02:00:00:00:2c:03",
+          "mode": "static",
+          "up": true
+        }
+      ]
+    },
+    {
+      "id": "r45",
+      "name": "Router 45",
+      "kind": "router",
+      "position": {
+        "x": 1500,
+        "y": 800
+      },
+      "powered": true,
+      "routes": [],
+      "interfaces": [
+        {
+          "id": "r45-eth0",
+          "name": "eth0",
+          "mac": "02:00:00:00:2d:00",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.178",
+          "prefix": 30
+        },
+        {
+          "id": "r45-eth1",
+          "name": "eth1",
+          "mac": "02:00:00:00:2d:01",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.181",
+          "prefix": 30
+        },
+        {
+          "id": "r45-eth2",
+          "name": "eth2",
+          "mac": "02:00:00:00:2d:02",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.2.69",
+          "prefix": 30
+        },
+        {
+          "id": "r45-eth3",
+          "name": "eth3",
+          "mac": "02:00:00:00:2d:03",
+          "mode": "static",
+          "up": true
+        }
+      ]
+    },
+    {
+      "id": "r46",
+      "name": "Router 46",
+      "kind": "router",
+      "position": {
+        "x": 1800,
+        "y": 800
+      },
+      "powered": true,
+      "routes": [],
+      "interfaces": [
+        {
+          "id": "r46-eth0",
+          "name": "eth0",
+          "mac": "02:00:00:00:2e:00",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.182",
+          "prefix": 30
+        },
+        {
+          "id": "r46-eth1",
+          "name": "eth1",
+          "mac": "02:00:00:00:2e:01",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.185",
+          "prefix": 30
+        },
+        {
+          "id": "r46-eth2",
+          "name": "eth2",
+          "mac": "02:00:00:00:2e:02",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.2.73",
+          "prefix": 30
+        },
+        {
+          "id": "r46-eth3",
+          "name": "eth3",
+          "mac": "02:00:00:00:2e:03",
+          "mode": "static",
+          "up": true
+        }
+      ]
+    },
+    {
+      "id": "r47",
+      "name": "Router 47",
+      "kind": "router",
+      "position": {
+        "x": 2100,
+        "y": 800
+      },
+      "powered": true,
+      "routes": [],
+      "interfaces": [
+        {
+          "id": "r47-eth0",
+          "name": "eth0",
+          "mac": "02:00:00:00:2f:00",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.186",
+          "prefix": 30
+        },
+        {
+          "id": "r47-eth1",
+          "name": "eth1",
+          "mac": "02:00:00:00:2f:01",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.189",
+          "prefix": 30
+        },
+        {
+          "id": "r47-eth2",
+          "name": "eth2",
+          "mac": "02:00:00:00:2f:02",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.2.77",
+          "prefix": 30
+        },
+        {
+          "id": "r47-eth3",
+          "name": "eth3",
+          "mac": "02:00:00:00:2f:03",
+          "mode": "static",
+          "up": true
+        }
+      ]
+    },
+    {
+      "id": "r48",
+      "name": "Router 48",
+      "kind": "router",
+      "position": {
+        "x": 2400,
+        "y": 800
+      },
+      "powered": true,
+      "routes": [],
+      "interfaces": [
+        {
+          "id": "r48-eth0",
+          "name": "eth0",
+          "mac": "02:00:00:00:30:00",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.190",
+          "prefix": 30
+        },
+        {
+          "id": "r48-eth1",
+          "name": "eth1",
+          "mac": "02:00:00:00:30:01",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.193",
+          "prefix": 30
+        },
+        {
+          "id": "r48-eth2",
+          "name": "eth2",
+          "mac": "02:00:00:00:30:02",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.2.81",
+          "prefix": 30
+        },
+        {
+          "id": "r48-eth3",
+          "name": "eth3",
+          "mac": "02:00:00:00:30:03",
+          "mode": "static",
+          "up": true
+        }
+      ]
+    },
+    {
+      "id": "r49",
+      "name": "Router 49",
+      "kind": "router",
+      "position": {
+        "x": 2700,
+        "y": 800
+      },
+      "powered": true,
+      "routes": [],
+      "interfaces": [
+        {
+          "id": "r49-eth0",
+          "name": "eth0",
+          "mac": "02:00:00:00:31:00",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.194",
+          "prefix": 30
+        },
+        {
+          "id": "r49-eth1",
+          "name": "eth1",
+          "mac": "02:00:00:00:31:01",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.197",
+          "prefix": 30
+        },
+        {
+          "id": "r49-eth2",
+          "name": "eth2",
+          "mac": "02:00:00:00:31:02",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.2.85",
+          "prefix": 30
+        },
+        {
+          "id": "r49-eth3",
+          "name": "eth3",
+          "mac": "02:00:00:00:31:03",
+          "mode": "static",
+          "up": true
+        }
+      ]
+    },
+    {
+      "id": "r50",
+      "name": "Router 50",
+      "kind": "router",
+      "position": {
+        "x": 0,
+        "y": 1000
+      },
+      "powered": true,
+      "routes": [],
+      "interfaces": [
+        {
+          "id": "r50-eth0",
+          "name": "eth0",
+          "mac": "02:00:00:00:32:00",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.198",
+          "prefix": 30
+        },
+        {
+          "id": "r50-eth1",
+          "name": "eth1",
+          "mac": "02:00:00:00:32:01",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.201",
+          "prefix": 30
+        },
+        {
+          "id": "r50-eth2",
+          "name": "eth2",
+          "mac": "02:00:00:00:32:02",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.146",
+          "prefix": 30
+        },
+        {
+          "id": "r50-eth3",
+          "name": "eth3",
+          "mac": "02:00:00:00:32:03",
+          "mode": "static",
+          "up": true
+        }
+      ]
+    },
+    {
+      "id": "r51",
+      "name": "Router 51",
+      "kind": "router",
+      "position": {
+        "x": 300,
+        "y": 1000
+      },
+      "powered": true,
+      "routes": [],
+      "interfaces": [
+        {
+          "id": "r51-eth0",
+          "name": "eth0",
+          "mac": "02:00:00:00:33:00",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.202",
+          "prefix": 30
+        },
+        {
+          "id": "r51-eth1",
+          "name": "eth1",
+          "mac": "02:00:00:00:33:01",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.205",
+          "prefix": 30
+        },
+        {
+          "id": "r51-eth2",
+          "name": "eth2",
+          "mac": "02:00:00:00:33:02",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.150",
+          "prefix": 30
+        },
+        {
+          "id": "r51-eth3",
+          "name": "eth3",
+          "mac": "02:00:00:00:33:03",
+          "mode": "static",
+          "up": true
+        }
+      ]
+    },
+    {
+      "id": "r52",
+      "name": "Router 52",
+      "kind": "router",
+      "position": {
+        "x": 600,
+        "y": 1000
+      },
+      "powered": true,
+      "routes": [],
+      "interfaces": [
+        {
+          "id": "r52-eth0",
+          "name": "eth0",
+          "mac": "02:00:00:00:34:00",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.206",
+          "prefix": 30
+        },
+        {
+          "id": "r52-eth1",
+          "name": "eth1",
+          "mac": "02:00:00:00:34:01",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.209",
+          "prefix": 30
+        },
+        {
+          "id": "r52-eth2",
+          "name": "eth2",
+          "mac": "02:00:00:00:34:02",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.154",
+          "prefix": 30
+        },
+        {
+          "id": "r52-eth3",
+          "name": "eth3",
+          "mac": "02:00:00:00:34:03",
+          "mode": "static",
+          "up": true
+        }
+      ]
+    },
+    {
+      "id": "r53",
+      "name": "Router 53",
+      "kind": "router",
+      "position": {
+        "x": 900,
+        "y": 1000
+      },
+      "powered": true,
+      "routes": [],
+      "interfaces": [
+        {
+          "id": "r53-eth0",
+          "name": "eth0",
+          "mac": "02:00:00:00:35:00",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.210",
+          "prefix": 30
+        },
+        {
+          "id": "r53-eth1",
+          "name": "eth1",
+          "mac": "02:00:00:00:35:01",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.213",
+          "prefix": 30
+        },
+        {
+          "id": "r53-eth2",
+          "name": "eth2",
+          "mac": "02:00:00:00:35:02",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.158",
+          "prefix": 30
+        },
+        {
+          "id": "r53-eth3",
+          "name": "eth3",
+          "mac": "02:00:00:00:35:03",
+          "mode": "static",
+          "up": true
+        }
+      ]
+    },
+    {
+      "id": "r54",
+      "name": "Router 54",
+      "kind": "router",
+      "position": {
+        "x": 1200,
+        "y": 1000
+      },
+      "powered": true,
+      "routes": [],
+      "interfaces": [
+        {
+          "id": "r54-eth0",
+          "name": "eth0",
+          "mac": "02:00:00:00:36:00",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.214",
+          "prefix": 30
+        },
+        {
+          "id": "r54-eth1",
+          "name": "eth1",
+          "mac": "02:00:00:00:36:01",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.217",
+          "prefix": 30
+        },
+        {
+          "id": "r54-eth2",
+          "name": "eth2",
+          "mac": "02:00:00:00:36:02",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.162",
+          "prefix": 30
+        },
+        {
+          "id": "r54-eth3",
+          "name": "eth3",
+          "mac": "02:00:00:00:36:03",
+          "mode": "static",
+          "up": true
+        }
+      ]
+    },
+    {
+      "id": "r55",
+      "name": "Router 55",
+      "kind": "router",
+      "position": {
+        "x": 1500,
+        "y": 1000
+      },
+      "powered": true,
+      "routes": [],
+      "interfaces": [
+        {
+          "id": "r55-eth0",
+          "name": "eth0",
+          "mac": "02:00:00:00:37:00",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.218",
+          "prefix": 30
+        },
+        {
+          "id": "r55-eth1",
+          "name": "eth1",
+          "mac": "02:00:00:00:37:01",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.221",
+          "prefix": 30
+        },
+        {
+          "id": "r55-eth2",
+          "name": "eth2",
+          "mac": "02:00:00:00:37:02",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.166",
+          "prefix": 30
+        },
+        {
+          "id": "r55-eth3",
+          "name": "eth3",
+          "mac": "02:00:00:00:37:03",
+          "mode": "static",
+          "up": true
+        }
+      ]
+    },
+    {
+      "id": "r56",
+      "name": "Router 56",
+      "kind": "router",
+      "position": {
+        "x": 1800,
+        "y": 1000
+      },
+      "powered": true,
+      "routes": [],
+      "interfaces": [
+        {
+          "id": "r56-eth0",
+          "name": "eth0",
+          "mac": "02:00:00:00:38:00",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.222",
+          "prefix": 30
+        },
+        {
+          "id": "r56-eth1",
+          "name": "eth1",
+          "mac": "02:00:00:00:38:01",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.225",
+          "prefix": 30
+        },
+        {
+          "id": "r56-eth2",
+          "name": "eth2",
+          "mac": "02:00:00:00:38:02",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.170",
+          "prefix": 30
+        },
+        {
+          "id": "r56-eth3",
+          "name": "eth3",
+          "mac": "02:00:00:00:38:03",
+          "mode": "static",
+          "up": true
+        }
+      ]
+    },
+    {
+      "id": "r57",
+      "name": "Router 57",
+      "kind": "router",
+      "position": {
+        "x": 2100,
+        "y": 1000
+      },
+      "powered": true,
+      "routes": [],
+      "interfaces": [
+        {
+          "id": "r57-eth0",
+          "name": "eth0",
+          "mac": "02:00:00:00:39:00",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.226",
+          "prefix": 30
+        },
+        {
+          "id": "r57-eth1",
+          "name": "eth1",
+          "mac": "02:00:00:00:39:01",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.229",
+          "prefix": 30
+        },
+        {
+          "id": "r57-eth2",
+          "name": "eth2",
+          "mac": "02:00:00:00:39:02",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.174",
+          "prefix": 30
+        },
+        {
+          "id": "r57-eth3",
+          "name": "eth3",
+          "mac": "02:00:00:00:39:03",
+          "mode": "static",
+          "up": true
+        }
+      ]
+    },
+    {
+      "id": "r58",
+      "name": "Router 58",
+      "kind": "router",
+      "position": {
+        "x": 2400,
+        "y": 1000
+      },
+      "powered": true,
+      "routes": [],
+      "interfaces": [
+        {
+          "id": "r58-eth0",
+          "name": "eth0",
+          "mac": "02:00:00:00:3a:00",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.230",
+          "prefix": 30
+        },
+        {
+          "id": "r58-eth1",
+          "name": "eth1",
+          "mac": "02:00:00:00:3a:01",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.233",
+          "prefix": 30
+        },
+        {
+          "id": "r58-eth2",
+          "name": "eth2",
+          "mac": "02:00:00:00:3a:02",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.178",
+          "prefix": 30
+        },
+        {
+          "id": "r58-eth3",
+          "name": "eth3",
+          "mac": "02:00:00:00:3a:03",
+          "mode": "static",
+          "up": true
+        }
+      ]
+    },
+    {
+      "id": "r59",
+      "name": "Router 59",
+      "kind": "router",
+      "position": {
+        "x": 2700,
+        "y": 1000
+      },
+      "powered": true,
+      "routes": [],
+      "interfaces": [
+        {
+          "id": "r59-eth0",
+          "name": "eth0",
+          "mac": "02:00:00:00:3b:00",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.234",
+          "prefix": 30
+        },
+        {
+          "id": "r59-eth1",
+          "name": "eth1",
+          "mac": "02:00:00:00:3b:01",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.237",
+          "prefix": 30
+        },
+        {
+          "id": "r59-eth2",
+          "name": "eth2",
+          "mac": "02:00:00:00:3b:02",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.182",
+          "prefix": 30
+        },
+        {
+          "id": "r59-eth3",
+          "name": "eth3",
+          "mac": "02:00:00:00:3b:03",
+          "mode": "static",
+          "up": true
+        }
+      ]
+    },
+    {
+      "id": "r60",
+      "name": "Router 60",
+      "kind": "router",
+      "position": {
+        "x": 0,
+        "y": 1200
+      },
+      "powered": true,
+      "routes": [],
+      "interfaces": [
+        {
+          "id": "r60-eth0",
+          "name": "eth0",
+          "mac": "02:00:00:00:3c:00",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.238",
+          "prefix": 30
+        },
+        {
+          "id": "r60-eth1",
+          "name": "eth1",
+          "mac": "02:00:00:00:3c:01",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.241",
+          "prefix": 30
+        },
+        {
+          "id": "r60-eth2",
+          "name": "eth2",
+          "mac": "02:00:00:00:3c:02",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.186",
+          "prefix": 30
+        },
+        {
+          "id": "r60-eth3",
+          "name": "eth3",
+          "mac": "02:00:00:00:3c:03",
+          "mode": "static",
+          "up": true
+        }
+      ]
+    },
+    {
+      "id": "r61",
+      "name": "Router 61",
+      "kind": "router",
+      "position": {
+        "x": 300,
+        "y": 1200
+      },
+      "powered": true,
+      "routes": [],
+      "interfaces": [
+        {
+          "id": "r61-eth0",
+          "name": "eth0",
+          "mac": "02:00:00:00:3d:00",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.242",
+          "prefix": 30
+        },
+        {
+          "id": "r61-eth1",
+          "name": "eth1",
+          "mac": "02:00:00:00:3d:01",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.245",
+          "prefix": 30
+        },
+        {
+          "id": "r61-eth2",
+          "name": "eth2",
+          "mac": "02:00:00:00:3d:02",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.190",
+          "prefix": 30
+        },
+        {
+          "id": "r61-eth3",
+          "name": "eth3",
+          "mac": "02:00:00:00:3d:03",
+          "mode": "static",
+          "up": true
+        }
+      ]
+    },
+    {
+      "id": "r62",
+      "name": "Router 62",
+      "kind": "router",
+      "position": {
+        "x": 600,
+        "y": 1200
+      },
+      "powered": true,
+      "routes": [],
+      "interfaces": [
+        {
+          "id": "r62-eth0",
+          "name": "eth0",
+          "mac": "02:00:00:00:3e:00",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.246",
+          "prefix": 30
+        },
+        {
+          "id": "r62-eth1",
+          "name": "eth1",
+          "mac": "02:00:00:00:3e:01",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.249",
+          "prefix": 30
+        },
+        {
+          "id": "r62-eth2",
+          "name": "eth2",
+          "mac": "02:00:00:00:3e:02",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.194",
+          "prefix": 30
+        },
+        {
+          "id": "r62-eth3",
+          "name": "eth3",
+          "mac": "02:00:00:00:3e:03",
+          "mode": "static",
+          "up": true
+        }
+      ]
+    },
+    {
+      "id": "r63",
+      "name": "Router 63",
+      "kind": "router",
+      "position": {
+        "x": 900,
+        "y": 1200
+      },
+      "powered": true,
+      "routes": [],
+      "interfaces": [
+        {
+          "id": "r63-eth0",
+          "name": "eth0",
+          "mac": "02:00:00:00:3f:00",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.250",
+          "prefix": 30
+        },
+        {
+          "id": "r63-eth1",
+          "name": "eth1",
+          "mac": "02:00:00:00:3f:01",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.253",
+          "prefix": 30
+        },
+        {
+          "id": "r63-eth2",
+          "name": "eth2",
+          "mac": "02:00:00:00:3f:02",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.198",
+          "prefix": 30
+        },
+        {
+          "id": "r63-eth3",
+          "name": "eth3",
+          "mac": "02:00:00:00:3f:03",
+          "mode": "static",
+          "up": true
+        }
+      ]
+    },
+    {
+      "id": "r64",
+      "name": "Router 64",
+      "kind": "router",
+      "position": {
+        "x": 1200,
+        "y": 1200
+      },
+      "powered": true,
+      "routes": [],
+      "interfaces": [
+        {
+          "id": "r64-eth0",
+          "name": "eth0",
+          "mac": "02:00:00:00:40:00",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.0.254",
+          "prefix": 30
+        },
+        {
+          "id": "r64-eth1",
+          "name": "eth1",
+          "mac": "02:00:00:00:40:01",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.1",
+          "prefix": 30
+        },
+        {
+          "id": "r64-eth2",
+          "name": "eth2",
+          "mac": "02:00:00:00:40:02",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.202",
+          "prefix": 30
+        },
+        {
+          "id": "r64-eth3",
+          "name": "eth3",
+          "mac": "02:00:00:00:40:03",
+          "mode": "static",
+          "up": true
+        }
+      ]
+    },
+    {
+      "id": "r65",
+      "name": "Router 65",
+      "kind": "router",
+      "position": {
+        "x": 1500,
+        "y": 1200
+      },
+      "powered": true,
+      "routes": [],
+      "interfaces": [
+        {
+          "id": "r65-eth0",
+          "name": "eth0",
+          "mac": "02:00:00:00:41:00",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.2",
+          "prefix": 30
+        },
+        {
+          "id": "r65-eth1",
+          "name": "eth1",
+          "mac": "02:00:00:00:41:01",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.5",
+          "prefix": 30
+        },
+        {
+          "id": "r65-eth2",
+          "name": "eth2",
+          "mac": "02:00:00:00:41:02",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.206",
+          "prefix": 30
+        },
+        {
+          "id": "r65-eth3",
+          "name": "eth3",
+          "mac": "02:00:00:00:41:03",
+          "mode": "static",
+          "up": true
+        }
+      ]
+    },
+    {
+      "id": "r66",
+      "name": "Router 66",
+      "kind": "router",
+      "position": {
+        "x": 1800,
+        "y": 1200
+      },
+      "powered": true,
+      "routes": [],
+      "interfaces": [
+        {
+          "id": "r66-eth0",
+          "name": "eth0",
+          "mac": "02:00:00:00:42:00",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.6",
+          "prefix": 30
+        },
+        {
+          "id": "r66-eth1",
+          "name": "eth1",
+          "mac": "02:00:00:00:42:01",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.9",
+          "prefix": 30
+        },
+        {
+          "id": "r66-eth2",
+          "name": "eth2",
+          "mac": "02:00:00:00:42:02",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.210",
+          "prefix": 30
+        },
+        {
+          "id": "r66-eth3",
+          "name": "eth3",
+          "mac": "02:00:00:00:42:03",
+          "mode": "static",
+          "up": true
+        }
+      ]
+    },
+    {
+      "id": "r67",
+      "name": "Router 67",
+      "kind": "router",
+      "position": {
+        "x": 2100,
+        "y": 1200
+      },
+      "powered": true,
+      "routes": [],
+      "interfaces": [
+        {
+          "id": "r67-eth0",
+          "name": "eth0",
+          "mac": "02:00:00:00:43:00",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.10",
+          "prefix": 30
+        },
+        {
+          "id": "r67-eth1",
+          "name": "eth1",
+          "mac": "02:00:00:00:43:01",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.13",
+          "prefix": 30
+        },
+        {
+          "id": "r67-eth2",
+          "name": "eth2",
+          "mac": "02:00:00:00:43:02",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.214",
+          "prefix": 30
+        },
+        {
+          "id": "r67-eth3",
+          "name": "eth3",
+          "mac": "02:00:00:00:43:03",
+          "mode": "static",
+          "up": true
+        }
+      ]
+    },
+    {
+      "id": "r68",
+      "name": "Router 68",
+      "kind": "router",
+      "position": {
+        "x": 2400,
+        "y": 1200
+      },
+      "powered": true,
+      "routes": [],
+      "interfaces": [
+        {
+          "id": "r68-eth0",
+          "name": "eth0",
+          "mac": "02:00:00:00:44:00",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.14",
+          "prefix": 30
+        },
+        {
+          "id": "r68-eth1",
+          "name": "eth1",
+          "mac": "02:00:00:00:44:01",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.17",
+          "prefix": 30
+        },
+        {
+          "id": "r68-eth2",
+          "name": "eth2",
+          "mac": "02:00:00:00:44:02",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.218",
+          "prefix": 30
+        },
+        {
+          "id": "r68-eth3",
+          "name": "eth3",
+          "mac": "02:00:00:00:44:03",
+          "mode": "static",
+          "up": true
+        }
+      ]
+    },
+    {
+      "id": "r69",
+      "name": "Router 69",
+      "kind": "router",
+      "position": {
+        "x": 2700,
+        "y": 1200
+      },
+      "powered": true,
+      "routes": [],
+      "interfaces": [
+        {
+          "id": "r69-eth0",
+          "name": "eth0",
+          "mac": "02:00:00:00:45:00",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.18",
+          "prefix": 30
+        },
+        {
+          "id": "r69-eth1",
+          "name": "eth1",
+          "mac": "02:00:00:00:45:01",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.21",
+          "prefix": 30
+        },
+        {
+          "id": "r69-eth2",
+          "name": "eth2",
+          "mac": "02:00:00:00:45:02",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.222",
+          "prefix": 30
+        },
+        {
+          "id": "r69-eth3",
+          "name": "eth3",
+          "mac": "02:00:00:00:45:03",
+          "mode": "static",
+          "up": true
+        }
+      ]
+    },
+    {
+      "id": "r70",
+      "name": "Router 70",
+      "kind": "router",
+      "position": {
+        "x": 0,
+        "y": 1400
+      },
+      "powered": true,
+      "routes": [],
+      "interfaces": [
+        {
+          "id": "r70-eth0",
+          "name": "eth0",
+          "mac": "02:00:00:00:46:00",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.22",
+          "prefix": 30
+        },
+        {
+          "id": "r70-eth1",
+          "name": "eth1",
+          "mac": "02:00:00:00:46:01",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.25",
+          "prefix": 30
+        },
+        {
+          "id": "r70-eth2",
+          "name": "eth2",
+          "mac": "02:00:00:00:46:02",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.226",
+          "prefix": 30
+        },
+        {
+          "id": "r70-eth3",
+          "name": "eth3",
+          "mac": "02:00:00:00:46:03",
+          "mode": "static",
+          "up": true
+        }
+      ]
+    },
+    {
+      "id": "r71",
+      "name": "Router 71",
+      "kind": "router",
+      "position": {
+        "x": 300,
+        "y": 1400
+      },
+      "powered": true,
+      "routes": [],
+      "interfaces": [
+        {
+          "id": "r71-eth0",
+          "name": "eth0",
+          "mac": "02:00:00:00:47:00",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.26",
+          "prefix": 30
+        },
+        {
+          "id": "r71-eth1",
+          "name": "eth1",
+          "mac": "02:00:00:00:47:01",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.29",
+          "prefix": 30
+        },
+        {
+          "id": "r71-eth2",
+          "name": "eth2",
+          "mac": "02:00:00:00:47:02",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.230",
+          "prefix": 30
+        },
+        {
+          "id": "r71-eth3",
+          "name": "eth3",
+          "mac": "02:00:00:00:47:03",
+          "mode": "static",
+          "up": true
+        }
+      ]
+    },
+    {
+      "id": "r72",
+      "name": "Router 72",
+      "kind": "router",
+      "position": {
+        "x": 600,
+        "y": 1400
+      },
+      "powered": true,
+      "routes": [],
+      "interfaces": [
+        {
+          "id": "r72-eth0",
+          "name": "eth0",
+          "mac": "02:00:00:00:48:00",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.30",
+          "prefix": 30
+        },
+        {
+          "id": "r72-eth1",
+          "name": "eth1",
+          "mac": "02:00:00:00:48:01",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.33",
+          "prefix": 30
+        },
+        {
+          "id": "r72-eth2",
+          "name": "eth2",
+          "mac": "02:00:00:00:48:02",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.234",
+          "prefix": 30
+        },
+        {
+          "id": "r72-eth3",
+          "name": "eth3",
+          "mac": "02:00:00:00:48:03",
+          "mode": "static",
+          "up": true
+        }
+      ]
+    },
+    {
+      "id": "r73",
+      "name": "Router 73",
+      "kind": "router",
+      "position": {
+        "x": 900,
+        "y": 1400
+      },
+      "powered": true,
+      "routes": [],
+      "interfaces": [
+        {
+          "id": "r73-eth0",
+          "name": "eth0",
+          "mac": "02:00:00:00:49:00",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.34",
+          "prefix": 30
+        },
+        {
+          "id": "r73-eth1",
+          "name": "eth1",
+          "mac": "02:00:00:00:49:01",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.37",
+          "prefix": 30
+        },
+        {
+          "id": "r73-eth2",
+          "name": "eth2",
+          "mac": "02:00:00:00:49:02",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.238",
+          "prefix": 30
+        },
+        {
+          "id": "r73-eth3",
+          "name": "eth3",
+          "mac": "02:00:00:00:49:03",
+          "mode": "static",
+          "up": true
+        }
+      ]
+    },
+    {
+      "id": "r74",
+      "name": "Router 74",
+      "kind": "router",
+      "position": {
+        "x": 1200,
+        "y": 1400
+      },
+      "powered": true,
+      "routes": [],
+      "interfaces": [
+        {
+          "id": "r74-eth0",
+          "name": "eth0",
+          "mac": "02:00:00:00:4a:00",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.38",
+          "prefix": 30
+        },
+        {
+          "id": "r74-eth1",
+          "name": "eth1",
+          "mac": "02:00:00:00:4a:01",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.41",
+          "prefix": 30
+        },
+        {
+          "id": "r74-eth2",
+          "name": "eth2",
+          "mac": "02:00:00:00:4a:02",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.242",
+          "prefix": 30
+        },
+        {
+          "id": "r74-eth3",
+          "name": "eth3",
+          "mac": "02:00:00:00:4a:03",
+          "mode": "static",
+          "up": true
+        }
+      ]
+    },
+    {
+      "id": "r75",
+      "name": "Router 75",
+      "kind": "router",
+      "position": {
+        "x": 1500,
+        "y": 1400
+      },
+      "powered": true,
+      "routes": [],
+      "interfaces": [
+        {
+          "id": "r75-eth0",
+          "name": "eth0",
+          "mac": "02:00:00:00:4b:00",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.42",
+          "prefix": 30
+        },
+        {
+          "id": "r75-eth1",
+          "name": "eth1",
+          "mac": "02:00:00:00:4b:01",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.45",
+          "prefix": 30
+        },
+        {
+          "id": "r75-eth2",
+          "name": "eth2",
+          "mac": "02:00:00:00:4b:02",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.246",
+          "prefix": 30
+        },
+        {
+          "id": "r75-eth3",
+          "name": "eth3",
+          "mac": "02:00:00:00:4b:03",
+          "mode": "static",
+          "up": true
+        }
+      ]
+    },
+    {
+      "id": "r76",
+      "name": "Router 76",
+      "kind": "router",
+      "position": {
+        "x": 1800,
+        "y": 1400
+      },
+      "powered": true,
+      "routes": [],
+      "interfaces": [
+        {
+          "id": "r76-eth0",
+          "name": "eth0",
+          "mac": "02:00:00:00:4c:00",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.46",
+          "prefix": 30
+        },
+        {
+          "id": "r76-eth1",
+          "name": "eth1",
+          "mac": "02:00:00:00:4c:01",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.49",
+          "prefix": 30
+        },
+        {
+          "id": "r76-eth2",
+          "name": "eth2",
+          "mac": "02:00:00:00:4c:02",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.250",
+          "prefix": 30
+        },
+        {
+          "id": "r76-eth3",
+          "name": "eth3",
+          "mac": "02:00:00:00:4c:03",
+          "mode": "static",
+          "up": true
+        }
+      ]
+    },
+    {
+      "id": "r77",
+      "name": "Router 77",
+      "kind": "router",
+      "position": {
+        "x": 2100,
+        "y": 1400
+      },
+      "powered": true,
+      "routes": [],
+      "interfaces": [
+        {
+          "id": "r77-eth0",
+          "name": "eth0",
+          "mac": "02:00:00:00:4d:00",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.50",
+          "prefix": 30
+        },
+        {
+          "id": "r77-eth1",
+          "name": "eth1",
+          "mac": "02:00:00:00:4d:01",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.53",
+          "prefix": 30
+        },
+        {
+          "id": "r77-eth2",
+          "name": "eth2",
+          "mac": "02:00:00:00:4d:02",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.254",
+          "prefix": 30
+        },
+        {
+          "id": "r77-eth3",
+          "name": "eth3",
+          "mac": "02:00:00:00:4d:03",
+          "mode": "static",
+          "up": true
+        }
+      ]
+    },
+    {
+      "id": "r78",
+      "name": "Router 78",
+      "kind": "router",
+      "position": {
+        "x": 2400,
+        "y": 1400
+      },
+      "powered": true,
+      "routes": [],
+      "interfaces": [
+        {
+          "id": "r78-eth0",
+          "name": "eth0",
+          "mac": "02:00:00:00:4e:00",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.54",
+          "prefix": 30
+        },
+        {
+          "id": "r78-eth1",
+          "name": "eth1",
+          "mac": "02:00:00:00:4e:01",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.57",
+          "prefix": 30
+        },
+        {
+          "id": "r78-eth2",
+          "name": "eth2",
+          "mac": "02:00:00:00:4e:02",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.2.2",
+          "prefix": 30
+        },
+        {
+          "id": "r78-eth3",
+          "name": "eth3",
+          "mac": "02:00:00:00:4e:03",
+          "mode": "static",
+          "up": true
+        }
+      ]
+    },
+    {
+      "id": "r79",
+      "name": "Router 79",
+      "kind": "router",
+      "position": {
+        "x": 2700,
+        "y": 1400
+      },
+      "powered": true,
+      "routes": [],
+      "interfaces": [
+        {
+          "id": "r79-eth0",
+          "name": "eth0",
+          "mac": "02:00:00:00:4f:00",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.58",
+          "prefix": 30
+        },
+        {
+          "id": "r79-eth1",
+          "name": "eth1",
+          "mac": "02:00:00:00:4f:01",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.61",
+          "prefix": 30
+        },
+        {
+          "id": "r79-eth2",
+          "name": "eth2",
+          "mac": "02:00:00:00:4f:02",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.2.6",
+          "prefix": 30
+        },
+        {
+          "id": "r79-eth3",
+          "name": "eth3",
+          "mac": "02:00:00:00:4f:03",
+          "mode": "static",
+          "up": true
+        }
+      ]
+    },
+    {
+      "id": "r80",
+      "name": "Router 80",
+      "kind": "router",
+      "position": {
+        "x": 0,
+        "y": 1600
+      },
+      "powered": true,
+      "routes": [],
+      "interfaces": [
+        {
+          "id": "r80-eth0",
+          "name": "eth0",
+          "mac": "02:00:00:00:50:00",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.62",
+          "prefix": 30
+        },
+        {
+          "id": "r80-eth1",
+          "name": "eth1",
+          "mac": "02:00:00:00:50:01",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.65",
+          "prefix": 30
+        },
+        {
+          "id": "r80-eth2",
+          "name": "eth2",
+          "mac": "02:00:00:00:50:02",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.2.10",
+          "prefix": 30
+        },
+        {
+          "id": "r80-eth3",
+          "name": "eth3",
+          "mac": "02:00:00:00:50:03",
+          "mode": "static",
+          "up": true
+        }
+      ]
+    },
+    {
+      "id": "r81",
+      "name": "Router 81",
+      "kind": "router",
+      "position": {
+        "x": 300,
+        "y": 1600
+      },
+      "powered": true,
+      "routes": [],
+      "interfaces": [
+        {
+          "id": "r81-eth0",
+          "name": "eth0",
+          "mac": "02:00:00:00:51:00",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.66",
+          "prefix": 30
+        },
+        {
+          "id": "r81-eth1",
+          "name": "eth1",
+          "mac": "02:00:00:00:51:01",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.69",
+          "prefix": 30
+        },
+        {
+          "id": "r81-eth2",
+          "name": "eth2",
+          "mac": "02:00:00:00:51:02",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.2.14",
+          "prefix": 30
+        },
+        {
+          "id": "r81-eth3",
+          "name": "eth3",
+          "mac": "02:00:00:00:51:03",
+          "mode": "static",
+          "up": true
+        }
+      ]
+    },
+    {
+      "id": "r82",
+      "name": "Router 82",
+      "kind": "router",
+      "position": {
+        "x": 600,
+        "y": 1600
+      },
+      "powered": true,
+      "routes": [],
+      "interfaces": [
+        {
+          "id": "r82-eth0",
+          "name": "eth0",
+          "mac": "02:00:00:00:52:00",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.70",
+          "prefix": 30
+        },
+        {
+          "id": "r82-eth1",
+          "name": "eth1",
+          "mac": "02:00:00:00:52:01",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.73",
+          "prefix": 30
+        },
+        {
+          "id": "r82-eth2",
+          "name": "eth2",
+          "mac": "02:00:00:00:52:02",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.2.18",
+          "prefix": 30
+        },
+        {
+          "id": "r82-eth3",
+          "name": "eth3",
+          "mac": "02:00:00:00:52:03",
+          "mode": "static",
+          "up": true
+        }
+      ]
+    },
+    {
+      "id": "r83",
+      "name": "Router 83",
+      "kind": "router",
+      "position": {
+        "x": 900,
+        "y": 1600
+      },
+      "powered": true,
+      "routes": [],
+      "interfaces": [
+        {
+          "id": "r83-eth0",
+          "name": "eth0",
+          "mac": "02:00:00:00:53:00",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.74",
+          "prefix": 30
+        },
+        {
+          "id": "r83-eth1",
+          "name": "eth1",
+          "mac": "02:00:00:00:53:01",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.77",
+          "prefix": 30
+        },
+        {
+          "id": "r83-eth2",
+          "name": "eth2",
+          "mac": "02:00:00:00:53:02",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.2.22",
+          "prefix": 30
+        },
+        {
+          "id": "r83-eth3",
+          "name": "eth3",
+          "mac": "02:00:00:00:53:03",
+          "mode": "static",
+          "up": true
+        }
+      ]
+    },
+    {
+      "id": "r84",
+      "name": "Router 84",
+      "kind": "router",
+      "position": {
+        "x": 1200,
+        "y": 1600
+      },
+      "powered": true,
+      "routes": [],
+      "interfaces": [
+        {
+          "id": "r84-eth0",
+          "name": "eth0",
+          "mac": "02:00:00:00:54:00",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.78",
+          "prefix": 30
+        },
+        {
+          "id": "r84-eth1",
+          "name": "eth1",
+          "mac": "02:00:00:00:54:01",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.81",
+          "prefix": 30
+        },
+        {
+          "id": "r84-eth2",
+          "name": "eth2",
+          "mac": "02:00:00:00:54:02",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.2.26",
+          "prefix": 30
+        },
+        {
+          "id": "r84-eth3",
+          "name": "eth3",
+          "mac": "02:00:00:00:54:03",
+          "mode": "static",
+          "up": true
+        }
+      ]
+    },
+    {
+      "id": "r85",
+      "name": "Router 85",
+      "kind": "router",
+      "position": {
+        "x": 1500,
+        "y": 1600
+      },
+      "powered": true,
+      "routes": [],
+      "interfaces": [
+        {
+          "id": "r85-eth0",
+          "name": "eth0",
+          "mac": "02:00:00:00:55:00",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.82",
+          "prefix": 30
+        },
+        {
+          "id": "r85-eth1",
+          "name": "eth1",
+          "mac": "02:00:00:00:55:01",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.85",
+          "prefix": 30
+        },
+        {
+          "id": "r85-eth2",
+          "name": "eth2",
+          "mac": "02:00:00:00:55:02",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.2.30",
+          "prefix": 30
+        },
+        {
+          "id": "r85-eth3",
+          "name": "eth3",
+          "mac": "02:00:00:00:55:03",
+          "mode": "static",
+          "up": true
+        }
+      ]
+    },
+    {
+      "id": "r86",
+      "name": "Router 86",
+      "kind": "router",
+      "position": {
+        "x": 1800,
+        "y": 1600
+      },
+      "powered": true,
+      "routes": [],
+      "interfaces": [
+        {
+          "id": "r86-eth0",
+          "name": "eth0",
+          "mac": "02:00:00:00:56:00",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.86",
+          "prefix": 30
+        },
+        {
+          "id": "r86-eth1",
+          "name": "eth1",
+          "mac": "02:00:00:00:56:01",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.89",
+          "prefix": 30
+        },
+        {
+          "id": "r86-eth2",
+          "name": "eth2",
+          "mac": "02:00:00:00:56:02",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.2.34",
+          "prefix": 30
+        },
+        {
+          "id": "r86-eth3",
+          "name": "eth3",
+          "mac": "02:00:00:00:56:03",
+          "mode": "static",
+          "up": true
+        }
+      ]
+    },
+    {
+      "id": "r87",
+      "name": "Router 87",
+      "kind": "router",
+      "position": {
+        "x": 2100,
+        "y": 1600
+      },
+      "powered": true,
+      "routes": [],
+      "interfaces": [
+        {
+          "id": "r87-eth0",
+          "name": "eth0",
+          "mac": "02:00:00:00:57:00",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.90",
+          "prefix": 30
+        },
+        {
+          "id": "r87-eth1",
+          "name": "eth1",
+          "mac": "02:00:00:00:57:01",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.93",
+          "prefix": 30
+        },
+        {
+          "id": "r87-eth2",
+          "name": "eth2",
+          "mac": "02:00:00:00:57:02",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.2.38",
+          "prefix": 30
+        },
+        {
+          "id": "r87-eth3",
+          "name": "eth3",
+          "mac": "02:00:00:00:57:03",
+          "mode": "static",
+          "up": true
+        }
+      ]
+    },
+    {
+      "id": "r88",
+      "name": "Router 88",
+      "kind": "router",
+      "position": {
+        "x": 2400,
+        "y": 1600
+      },
+      "powered": true,
+      "routes": [],
+      "interfaces": [
+        {
+          "id": "r88-eth0",
+          "name": "eth0",
+          "mac": "02:00:00:00:58:00",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.94",
+          "prefix": 30
+        },
+        {
+          "id": "r88-eth1",
+          "name": "eth1",
+          "mac": "02:00:00:00:58:01",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.97",
+          "prefix": 30
+        },
+        {
+          "id": "r88-eth2",
+          "name": "eth2",
+          "mac": "02:00:00:00:58:02",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.2.42",
+          "prefix": 30
+        },
+        {
+          "id": "r88-eth3",
+          "name": "eth3",
+          "mac": "02:00:00:00:58:03",
+          "mode": "static",
+          "up": true
+        }
+      ]
+    },
+    {
+      "id": "r89",
+      "name": "Router 89",
+      "kind": "router",
+      "position": {
+        "x": 2700,
+        "y": 1600
+      },
+      "powered": true,
+      "routes": [],
+      "interfaces": [
+        {
+          "id": "r89-eth0",
+          "name": "eth0",
+          "mac": "02:00:00:00:59:00",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.98",
+          "prefix": 30
+        },
+        {
+          "id": "r89-eth1",
+          "name": "eth1",
+          "mac": "02:00:00:00:59:01",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.101",
+          "prefix": 30
+        },
+        {
+          "id": "r89-eth2",
+          "name": "eth2",
+          "mac": "02:00:00:00:59:02",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.2.46",
+          "prefix": 30
+        },
+        {
+          "id": "r89-eth3",
+          "name": "eth3",
+          "mac": "02:00:00:00:59:03",
+          "mode": "static",
+          "up": true
+        }
+      ]
+    },
+    {
+      "id": "r90",
+      "name": "Router 90",
+      "kind": "router",
+      "position": {
+        "x": 0,
+        "y": 1800
+      },
+      "powered": true,
+      "routes": [],
+      "interfaces": [
+        {
+          "id": "r90-eth0",
+          "name": "eth0",
+          "mac": "02:00:00:00:5a:00",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.102",
+          "prefix": 30
+        },
+        {
+          "id": "r90-eth1",
+          "name": "eth1",
+          "mac": "02:00:00:00:5a:01",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.105",
+          "prefix": 30
+        },
+        {
+          "id": "r90-eth2",
+          "name": "eth2",
+          "mac": "02:00:00:00:5a:02",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.2.50",
+          "prefix": 30
+        },
+        {
+          "id": "r90-eth3",
+          "name": "eth3",
+          "mac": "02:00:00:00:5a:03",
+          "mode": "static",
+          "up": true
+        }
+      ]
+    },
+    {
+      "id": "r91",
+      "name": "Router 91",
+      "kind": "router",
+      "position": {
+        "x": 300,
+        "y": 1800
+      },
+      "powered": true,
+      "routes": [],
+      "interfaces": [
+        {
+          "id": "r91-eth0",
+          "name": "eth0",
+          "mac": "02:00:00:00:5b:00",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.106",
+          "prefix": 30
+        },
+        {
+          "id": "r91-eth1",
+          "name": "eth1",
+          "mac": "02:00:00:00:5b:01",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.109",
+          "prefix": 30
+        },
+        {
+          "id": "r91-eth2",
+          "name": "eth2",
+          "mac": "02:00:00:00:5b:02",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.2.54",
+          "prefix": 30
+        },
+        {
+          "id": "r91-eth3",
+          "name": "eth3",
+          "mac": "02:00:00:00:5b:03",
+          "mode": "static",
+          "up": true
+        }
+      ]
+    },
+    {
+      "id": "r92",
+      "name": "Router 92",
+      "kind": "router",
+      "position": {
+        "x": 600,
+        "y": 1800
+      },
+      "powered": true,
+      "routes": [],
+      "interfaces": [
+        {
+          "id": "r92-eth0",
+          "name": "eth0",
+          "mac": "02:00:00:00:5c:00",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.110",
+          "prefix": 30
+        },
+        {
+          "id": "r92-eth1",
+          "name": "eth1",
+          "mac": "02:00:00:00:5c:01",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.113",
+          "prefix": 30
+        },
+        {
+          "id": "r92-eth2",
+          "name": "eth2",
+          "mac": "02:00:00:00:5c:02",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.2.58",
+          "prefix": 30
+        },
+        {
+          "id": "r92-eth3",
+          "name": "eth3",
+          "mac": "02:00:00:00:5c:03",
+          "mode": "static",
+          "up": true
+        }
+      ]
+    },
+    {
+      "id": "r93",
+      "name": "Router 93",
+      "kind": "router",
+      "position": {
+        "x": 900,
+        "y": 1800
+      },
+      "powered": true,
+      "routes": [],
+      "interfaces": [
+        {
+          "id": "r93-eth0",
+          "name": "eth0",
+          "mac": "02:00:00:00:5d:00",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.114",
+          "prefix": 30
+        },
+        {
+          "id": "r93-eth1",
+          "name": "eth1",
+          "mac": "02:00:00:00:5d:01",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.117",
+          "prefix": 30
+        },
+        {
+          "id": "r93-eth2",
+          "name": "eth2",
+          "mac": "02:00:00:00:5d:02",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.2.62",
+          "prefix": 30
+        },
+        {
+          "id": "r93-eth3",
+          "name": "eth3",
+          "mac": "02:00:00:00:5d:03",
+          "mode": "static",
+          "up": true
+        }
+      ]
+    },
+    {
+      "id": "r94",
+      "name": "Router 94",
+      "kind": "router",
+      "position": {
+        "x": 1200,
+        "y": 1800
+      },
+      "powered": true,
+      "routes": [],
+      "interfaces": [
+        {
+          "id": "r94-eth0",
+          "name": "eth0",
+          "mac": "02:00:00:00:5e:00",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.118",
+          "prefix": 30
+        },
+        {
+          "id": "r94-eth1",
+          "name": "eth1",
+          "mac": "02:00:00:00:5e:01",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.121",
+          "prefix": 30
+        },
+        {
+          "id": "r94-eth2",
+          "name": "eth2",
+          "mac": "02:00:00:00:5e:02",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.2.66",
+          "prefix": 30
+        },
+        {
+          "id": "r94-eth3",
+          "name": "eth3",
+          "mac": "02:00:00:00:5e:03",
+          "mode": "static",
+          "up": true
+        }
+      ]
+    },
+    {
+      "id": "r95",
+      "name": "Router 95",
+      "kind": "router",
+      "position": {
+        "x": 1500,
+        "y": 1800
+      },
+      "powered": true,
+      "routes": [],
+      "interfaces": [
+        {
+          "id": "r95-eth0",
+          "name": "eth0",
+          "mac": "02:00:00:00:5f:00",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.122",
+          "prefix": 30
+        },
+        {
+          "id": "r95-eth1",
+          "name": "eth1",
+          "mac": "02:00:00:00:5f:01",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.125",
+          "prefix": 30
+        },
+        {
+          "id": "r95-eth2",
+          "name": "eth2",
+          "mac": "02:00:00:00:5f:02",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.2.70",
+          "prefix": 30
+        },
+        {
+          "id": "r95-eth3",
+          "name": "eth3",
+          "mac": "02:00:00:00:5f:03",
+          "mode": "static",
+          "up": true
+        }
+      ]
+    },
+    {
+      "id": "r96",
+      "name": "Router 96",
+      "kind": "router",
+      "position": {
+        "x": 1800,
+        "y": 1800
+      },
+      "powered": true,
+      "routes": [],
+      "interfaces": [
+        {
+          "id": "r96-eth0",
+          "name": "eth0",
+          "mac": "02:00:00:00:60:00",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.126",
+          "prefix": 30
+        },
+        {
+          "id": "r96-eth1",
+          "name": "eth1",
+          "mac": "02:00:00:00:60:01",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.129",
+          "prefix": 30
+        },
+        {
+          "id": "r96-eth2",
+          "name": "eth2",
+          "mac": "02:00:00:00:60:02",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.2.74",
+          "prefix": 30
+        },
+        {
+          "id": "r96-eth3",
+          "name": "eth3",
+          "mac": "02:00:00:00:60:03",
+          "mode": "static",
+          "up": true
+        }
+      ]
+    },
+    {
+      "id": "r97",
+      "name": "Router 97",
+      "kind": "router",
+      "position": {
+        "x": 2100,
+        "y": 1800
+      },
+      "powered": true,
+      "routes": [],
+      "interfaces": [
+        {
+          "id": "r97-eth0",
+          "name": "eth0",
+          "mac": "02:00:00:00:61:00",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.130",
+          "prefix": 30
+        },
+        {
+          "id": "r97-eth1",
+          "name": "eth1",
+          "mac": "02:00:00:00:61:01",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.133",
+          "prefix": 30
+        },
+        {
+          "id": "r97-eth2",
+          "name": "eth2",
+          "mac": "02:00:00:00:61:02",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.2.78",
+          "prefix": 30
+        },
+        {
+          "id": "r97-eth3",
+          "name": "eth3",
+          "mac": "02:00:00:00:61:03",
+          "mode": "static",
+          "up": true
+        }
+      ]
+    },
+    {
+      "id": "r98",
+      "name": "Router 98",
+      "kind": "router",
+      "position": {
+        "x": 2400,
+        "y": 1800
+      },
+      "powered": true,
+      "routes": [],
+      "interfaces": [
+        {
+          "id": "r98-eth0",
+          "name": "eth0",
+          "mac": "02:00:00:00:62:00",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.134",
+          "prefix": 30
+        },
+        {
+          "id": "r98-eth1",
+          "name": "eth1",
+          "mac": "02:00:00:00:62:01",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.137",
+          "prefix": 30
+        },
+        {
+          "id": "r98-eth2",
+          "name": "eth2",
+          "mac": "02:00:00:00:62:02",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.2.82",
+          "prefix": 30
+        },
+        {
+          "id": "r98-eth3",
+          "name": "eth3",
+          "mac": "02:00:00:00:62:03",
+          "mode": "static",
+          "up": true
+        }
+      ]
+    },
+    {
+      "id": "r99",
+      "name": "Router 99",
+      "kind": "router",
+      "position": {
+        "x": 2700,
+        "y": 1800
+      },
+      "powered": true,
+      "routes": [],
+      "interfaces": [
+        {
+          "id": "r99-eth0",
+          "name": "eth0",
+          "mac": "02:00:00:00:63:00",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.138",
+          "prefix": 30
+        },
+        {
+          "id": "r99-eth1",
+          "name": "eth1",
+          "mac": "02:00:00:00:63:01",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.1.141",
+          "prefix": 30
+        },
+        {
+          "id": "r99-eth2",
+          "name": "eth2",
+          "mac": "02:00:00:00:63:02",
+          "mode": "static",
+          "up": true,
+          "ip": "10.1.2.86",
+          "prefix": 30
+        },
+        {
+          "id": "r99-eth3",
+          "name": "eth3",
+          "mac": "02:00:00:00:63:03",
+          "mode": "static",
+          "up": true
+        }
+      ]
+    }
+  ],
+  "links": [
+    {
+      "id": "l0",
+      "a": {
+        "deviceId": "r0",
+        "interfaceId": "r0-eth1"
+      },
+      "b": {
+        "deviceId": "r1",
+        "interfaceId": "r1-eth0"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l1",
+      "a": {
+        "deviceId": "r1",
+        "interfaceId": "r1-eth1"
+      },
+      "b": {
+        "deviceId": "r2",
+        "interfaceId": "r2-eth0"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l2",
+      "a": {
+        "deviceId": "r2",
+        "interfaceId": "r2-eth1"
+      },
+      "b": {
+        "deviceId": "r3",
+        "interfaceId": "r3-eth0"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l3",
+      "a": {
+        "deviceId": "r3",
+        "interfaceId": "r3-eth1"
+      },
+      "b": {
+        "deviceId": "r4",
+        "interfaceId": "r4-eth0"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l4",
+      "a": {
+        "deviceId": "r4",
+        "interfaceId": "r4-eth1"
+      },
+      "b": {
+        "deviceId": "r5",
+        "interfaceId": "r5-eth0"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l5",
+      "a": {
+        "deviceId": "r5",
+        "interfaceId": "r5-eth1"
+      },
+      "b": {
+        "deviceId": "r6",
+        "interfaceId": "r6-eth0"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l6",
+      "a": {
+        "deviceId": "r6",
+        "interfaceId": "r6-eth1"
+      },
+      "b": {
+        "deviceId": "r7",
+        "interfaceId": "r7-eth0"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l7",
+      "a": {
+        "deviceId": "r7",
+        "interfaceId": "r7-eth1"
+      },
+      "b": {
+        "deviceId": "r8",
+        "interfaceId": "r8-eth0"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l8",
+      "a": {
+        "deviceId": "r8",
+        "interfaceId": "r8-eth1"
+      },
+      "b": {
+        "deviceId": "r9",
+        "interfaceId": "r9-eth0"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l9",
+      "a": {
+        "deviceId": "r9",
+        "interfaceId": "r9-eth1"
+      },
+      "b": {
+        "deviceId": "r10",
+        "interfaceId": "r10-eth0"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l10",
+      "a": {
+        "deviceId": "r10",
+        "interfaceId": "r10-eth1"
+      },
+      "b": {
+        "deviceId": "r11",
+        "interfaceId": "r11-eth0"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l11",
+      "a": {
+        "deviceId": "r11",
+        "interfaceId": "r11-eth1"
+      },
+      "b": {
+        "deviceId": "r12",
+        "interfaceId": "r12-eth0"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l12",
+      "a": {
+        "deviceId": "r12",
+        "interfaceId": "r12-eth1"
+      },
+      "b": {
+        "deviceId": "r13",
+        "interfaceId": "r13-eth0"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l13",
+      "a": {
+        "deviceId": "r13",
+        "interfaceId": "r13-eth1"
+      },
+      "b": {
+        "deviceId": "r14",
+        "interfaceId": "r14-eth0"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l14",
+      "a": {
+        "deviceId": "r14",
+        "interfaceId": "r14-eth1"
+      },
+      "b": {
+        "deviceId": "r15",
+        "interfaceId": "r15-eth0"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l15",
+      "a": {
+        "deviceId": "r15",
+        "interfaceId": "r15-eth1"
+      },
+      "b": {
+        "deviceId": "r16",
+        "interfaceId": "r16-eth0"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l16",
+      "a": {
+        "deviceId": "r16",
+        "interfaceId": "r16-eth1"
+      },
+      "b": {
+        "deviceId": "r17",
+        "interfaceId": "r17-eth0"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l17",
+      "a": {
+        "deviceId": "r17",
+        "interfaceId": "r17-eth1"
+      },
+      "b": {
+        "deviceId": "r18",
+        "interfaceId": "r18-eth0"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l18",
+      "a": {
+        "deviceId": "r18",
+        "interfaceId": "r18-eth1"
+      },
+      "b": {
+        "deviceId": "r19",
+        "interfaceId": "r19-eth0"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l19",
+      "a": {
+        "deviceId": "r19",
+        "interfaceId": "r19-eth1"
+      },
+      "b": {
+        "deviceId": "r20",
+        "interfaceId": "r20-eth0"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l20",
+      "a": {
+        "deviceId": "r20",
+        "interfaceId": "r20-eth1"
+      },
+      "b": {
+        "deviceId": "r21",
+        "interfaceId": "r21-eth0"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l21",
+      "a": {
+        "deviceId": "r21",
+        "interfaceId": "r21-eth1"
+      },
+      "b": {
+        "deviceId": "r22",
+        "interfaceId": "r22-eth0"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l22",
+      "a": {
+        "deviceId": "r22",
+        "interfaceId": "r22-eth1"
+      },
+      "b": {
+        "deviceId": "r23",
+        "interfaceId": "r23-eth0"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l23",
+      "a": {
+        "deviceId": "r23",
+        "interfaceId": "r23-eth1"
+      },
+      "b": {
+        "deviceId": "r24",
+        "interfaceId": "r24-eth0"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l24",
+      "a": {
+        "deviceId": "r24",
+        "interfaceId": "r24-eth1"
+      },
+      "b": {
+        "deviceId": "r25",
+        "interfaceId": "r25-eth0"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l25",
+      "a": {
+        "deviceId": "r25",
+        "interfaceId": "r25-eth1"
+      },
+      "b": {
+        "deviceId": "r26",
+        "interfaceId": "r26-eth0"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l26",
+      "a": {
+        "deviceId": "r26",
+        "interfaceId": "r26-eth1"
+      },
+      "b": {
+        "deviceId": "r27",
+        "interfaceId": "r27-eth0"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l27",
+      "a": {
+        "deviceId": "r27",
+        "interfaceId": "r27-eth1"
+      },
+      "b": {
+        "deviceId": "r28",
+        "interfaceId": "r28-eth0"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l28",
+      "a": {
+        "deviceId": "r28",
+        "interfaceId": "r28-eth1"
+      },
+      "b": {
+        "deviceId": "r29",
+        "interfaceId": "r29-eth0"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l29",
+      "a": {
+        "deviceId": "r29",
+        "interfaceId": "r29-eth1"
+      },
+      "b": {
+        "deviceId": "r30",
+        "interfaceId": "r30-eth0"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l30",
+      "a": {
+        "deviceId": "r30",
+        "interfaceId": "r30-eth1"
+      },
+      "b": {
+        "deviceId": "r31",
+        "interfaceId": "r31-eth0"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l31",
+      "a": {
+        "deviceId": "r31",
+        "interfaceId": "r31-eth1"
+      },
+      "b": {
+        "deviceId": "r32",
+        "interfaceId": "r32-eth0"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l32",
+      "a": {
+        "deviceId": "r32",
+        "interfaceId": "r32-eth1"
+      },
+      "b": {
+        "deviceId": "r33",
+        "interfaceId": "r33-eth0"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l33",
+      "a": {
+        "deviceId": "r33",
+        "interfaceId": "r33-eth1"
+      },
+      "b": {
+        "deviceId": "r34",
+        "interfaceId": "r34-eth0"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l34",
+      "a": {
+        "deviceId": "r34",
+        "interfaceId": "r34-eth1"
+      },
+      "b": {
+        "deviceId": "r35",
+        "interfaceId": "r35-eth0"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l35",
+      "a": {
+        "deviceId": "r35",
+        "interfaceId": "r35-eth1"
+      },
+      "b": {
+        "deviceId": "r36",
+        "interfaceId": "r36-eth0"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l36",
+      "a": {
+        "deviceId": "r36",
+        "interfaceId": "r36-eth1"
+      },
+      "b": {
+        "deviceId": "r37",
+        "interfaceId": "r37-eth0"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l37",
+      "a": {
+        "deviceId": "r37",
+        "interfaceId": "r37-eth1"
+      },
+      "b": {
+        "deviceId": "r38",
+        "interfaceId": "r38-eth0"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l38",
+      "a": {
+        "deviceId": "r38",
+        "interfaceId": "r38-eth1"
+      },
+      "b": {
+        "deviceId": "r39",
+        "interfaceId": "r39-eth0"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l39",
+      "a": {
+        "deviceId": "r39",
+        "interfaceId": "r39-eth1"
+      },
+      "b": {
+        "deviceId": "r40",
+        "interfaceId": "r40-eth0"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l40",
+      "a": {
+        "deviceId": "r40",
+        "interfaceId": "r40-eth1"
+      },
+      "b": {
+        "deviceId": "r41",
+        "interfaceId": "r41-eth0"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l41",
+      "a": {
+        "deviceId": "r41",
+        "interfaceId": "r41-eth1"
+      },
+      "b": {
+        "deviceId": "r42",
+        "interfaceId": "r42-eth0"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l42",
+      "a": {
+        "deviceId": "r42",
+        "interfaceId": "r42-eth1"
+      },
+      "b": {
+        "deviceId": "r43",
+        "interfaceId": "r43-eth0"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l43",
+      "a": {
+        "deviceId": "r43",
+        "interfaceId": "r43-eth1"
+      },
+      "b": {
+        "deviceId": "r44",
+        "interfaceId": "r44-eth0"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l44",
+      "a": {
+        "deviceId": "r44",
+        "interfaceId": "r44-eth1"
+      },
+      "b": {
+        "deviceId": "r45",
+        "interfaceId": "r45-eth0"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l45",
+      "a": {
+        "deviceId": "r45",
+        "interfaceId": "r45-eth1"
+      },
+      "b": {
+        "deviceId": "r46",
+        "interfaceId": "r46-eth0"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l46",
+      "a": {
+        "deviceId": "r46",
+        "interfaceId": "r46-eth1"
+      },
+      "b": {
+        "deviceId": "r47",
+        "interfaceId": "r47-eth0"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l47",
+      "a": {
+        "deviceId": "r47",
+        "interfaceId": "r47-eth1"
+      },
+      "b": {
+        "deviceId": "r48",
+        "interfaceId": "r48-eth0"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l48",
+      "a": {
+        "deviceId": "r48",
+        "interfaceId": "r48-eth1"
+      },
+      "b": {
+        "deviceId": "r49",
+        "interfaceId": "r49-eth0"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l49",
+      "a": {
+        "deviceId": "r49",
+        "interfaceId": "r49-eth1"
+      },
+      "b": {
+        "deviceId": "r50",
+        "interfaceId": "r50-eth0"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l50",
+      "a": {
+        "deviceId": "r50",
+        "interfaceId": "r50-eth1"
+      },
+      "b": {
+        "deviceId": "r51",
+        "interfaceId": "r51-eth0"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l51",
+      "a": {
+        "deviceId": "r51",
+        "interfaceId": "r51-eth1"
+      },
+      "b": {
+        "deviceId": "r52",
+        "interfaceId": "r52-eth0"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l52",
+      "a": {
+        "deviceId": "r52",
+        "interfaceId": "r52-eth1"
+      },
+      "b": {
+        "deviceId": "r53",
+        "interfaceId": "r53-eth0"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l53",
+      "a": {
+        "deviceId": "r53",
+        "interfaceId": "r53-eth1"
+      },
+      "b": {
+        "deviceId": "r54",
+        "interfaceId": "r54-eth0"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l54",
+      "a": {
+        "deviceId": "r54",
+        "interfaceId": "r54-eth1"
+      },
+      "b": {
+        "deviceId": "r55",
+        "interfaceId": "r55-eth0"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l55",
+      "a": {
+        "deviceId": "r55",
+        "interfaceId": "r55-eth1"
+      },
+      "b": {
+        "deviceId": "r56",
+        "interfaceId": "r56-eth0"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l56",
+      "a": {
+        "deviceId": "r56",
+        "interfaceId": "r56-eth1"
+      },
+      "b": {
+        "deviceId": "r57",
+        "interfaceId": "r57-eth0"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l57",
+      "a": {
+        "deviceId": "r57",
+        "interfaceId": "r57-eth1"
+      },
+      "b": {
+        "deviceId": "r58",
+        "interfaceId": "r58-eth0"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l58",
+      "a": {
+        "deviceId": "r58",
+        "interfaceId": "r58-eth1"
+      },
+      "b": {
+        "deviceId": "r59",
+        "interfaceId": "r59-eth0"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l59",
+      "a": {
+        "deviceId": "r59",
+        "interfaceId": "r59-eth1"
+      },
+      "b": {
+        "deviceId": "r60",
+        "interfaceId": "r60-eth0"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l60",
+      "a": {
+        "deviceId": "r60",
+        "interfaceId": "r60-eth1"
+      },
+      "b": {
+        "deviceId": "r61",
+        "interfaceId": "r61-eth0"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l61",
+      "a": {
+        "deviceId": "r61",
+        "interfaceId": "r61-eth1"
+      },
+      "b": {
+        "deviceId": "r62",
+        "interfaceId": "r62-eth0"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l62",
+      "a": {
+        "deviceId": "r62",
+        "interfaceId": "r62-eth1"
+      },
+      "b": {
+        "deviceId": "r63",
+        "interfaceId": "r63-eth0"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l63",
+      "a": {
+        "deviceId": "r63",
+        "interfaceId": "r63-eth1"
+      },
+      "b": {
+        "deviceId": "r64",
+        "interfaceId": "r64-eth0"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l64",
+      "a": {
+        "deviceId": "r64",
+        "interfaceId": "r64-eth1"
+      },
+      "b": {
+        "deviceId": "r65",
+        "interfaceId": "r65-eth0"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l65",
+      "a": {
+        "deviceId": "r65",
+        "interfaceId": "r65-eth1"
+      },
+      "b": {
+        "deviceId": "r66",
+        "interfaceId": "r66-eth0"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l66",
+      "a": {
+        "deviceId": "r66",
+        "interfaceId": "r66-eth1"
+      },
+      "b": {
+        "deviceId": "r67",
+        "interfaceId": "r67-eth0"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l67",
+      "a": {
+        "deviceId": "r67",
+        "interfaceId": "r67-eth1"
+      },
+      "b": {
+        "deviceId": "r68",
+        "interfaceId": "r68-eth0"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l68",
+      "a": {
+        "deviceId": "r68",
+        "interfaceId": "r68-eth1"
+      },
+      "b": {
+        "deviceId": "r69",
+        "interfaceId": "r69-eth0"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l69",
+      "a": {
+        "deviceId": "r69",
+        "interfaceId": "r69-eth1"
+      },
+      "b": {
+        "deviceId": "r70",
+        "interfaceId": "r70-eth0"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l70",
+      "a": {
+        "deviceId": "r70",
+        "interfaceId": "r70-eth1"
+      },
+      "b": {
+        "deviceId": "r71",
+        "interfaceId": "r71-eth0"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l71",
+      "a": {
+        "deviceId": "r71",
+        "interfaceId": "r71-eth1"
+      },
+      "b": {
+        "deviceId": "r72",
+        "interfaceId": "r72-eth0"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l72",
+      "a": {
+        "deviceId": "r72",
+        "interfaceId": "r72-eth1"
+      },
+      "b": {
+        "deviceId": "r73",
+        "interfaceId": "r73-eth0"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l73",
+      "a": {
+        "deviceId": "r73",
+        "interfaceId": "r73-eth1"
+      },
+      "b": {
+        "deviceId": "r74",
+        "interfaceId": "r74-eth0"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l74",
+      "a": {
+        "deviceId": "r74",
+        "interfaceId": "r74-eth1"
+      },
+      "b": {
+        "deviceId": "r75",
+        "interfaceId": "r75-eth0"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l75",
+      "a": {
+        "deviceId": "r75",
+        "interfaceId": "r75-eth1"
+      },
+      "b": {
+        "deviceId": "r76",
+        "interfaceId": "r76-eth0"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l76",
+      "a": {
+        "deviceId": "r76",
+        "interfaceId": "r76-eth1"
+      },
+      "b": {
+        "deviceId": "r77",
+        "interfaceId": "r77-eth0"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l77",
+      "a": {
+        "deviceId": "r77",
+        "interfaceId": "r77-eth1"
+      },
+      "b": {
+        "deviceId": "r78",
+        "interfaceId": "r78-eth0"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l78",
+      "a": {
+        "deviceId": "r78",
+        "interfaceId": "r78-eth1"
+      },
+      "b": {
+        "deviceId": "r79",
+        "interfaceId": "r79-eth0"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l79",
+      "a": {
+        "deviceId": "r79",
+        "interfaceId": "r79-eth1"
+      },
+      "b": {
+        "deviceId": "r80",
+        "interfaceId": "r80-eth0"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l80",
+      "a": {
+        "deviceId": "r80",
+        "interfaceId": "r80-eth1"
+      },
+      "b": {
+        "deviceId": "r81",
+        "interfaceId": "r81-eth0"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l81",
+      "a": {
+        "deviceId": "r81",
+        "interfaceId": "r81-eth1"
+      },
+      "b": {
+        "deviceId": "r82",
+        "interfaceId": "r82-eth0"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l82",
+      "a": {
+        "deviceId": "r82",
+        "interfaceId": "r82-eth1"
+      },
+      "b": {
+        "deviceId": "r83",
+        "interfaceId": "r83-eth0"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l83",
+      "a": {
+        "deviceId": "r83",
+        "interfaceId": "r83-eth1"
+      },
+      "b": {
+        "deviceId": "r84",
+        "interfaceId": "r84-eth0"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l84",
+      "a": {
+        "deviceId": "r84",
+        "interfaceId": "r84-eth1"
+      },
+      "b": {
+        "deviceId": "r85",
+        "interfaceId": "r85-eth0"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l85",
+      "a": {
+        "deviceId": "r85",
+        "interfaceId": "r85-eth1"
+      },
+      "b": {
+        "deviceId": "r86",
+        "interfaceId": "r86-eth0"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l86",
+      "a": {
+        "deviceId": "r86",
+        "interfaceId": "r86-eth1"
+      },
+      "b": {
+        "deviceId": "r87",
+        "interfaceId": "r87-eth0"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l87",
+      "a": {
+        "deviceId": "r87",
+        "interfaceId": "r87-eth1"
+      },
+      "b": {
+        "deviceId": "r88",
+        "interfaceId": "r88-eth0"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l88",
+      "a": {
+        "deviceId": "r88",
+        "interfaceId": "r88-eth1"
+      },
+      "b": {
+        "deviceId": "r89",
+        "interfaceId": "r89-eth0"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l89",
+      "a": {
+        "deviceId": "r89",
+        "interfaceId": "r89-eth1"
+      },
+      "b": {
+        "deviceId": "r90",
+        "interfaceId": "r90-eth0"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l90",
+      "a": {
+        "deviceId": "r90",
+        "interfaceId": "r90-eth1"
+      },
+      "b": {
+        "deviceId": "r91",
+        "interfaceId": "r91-eth0"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l91",
+      "a": {
+        "deviceId": "r91",
+        "interfaceId": "r91-eth1"
+      },
+      "b": {
+        "deviceId": "r92",
+        "interfaceId": "r92-eth0"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l92",
+      "a": {
+        "deviceId": "r92",
+        "interfaceId": "r92-eth1"
+      },
+      "b": {
+        "deviceId": "r93",
+        "interfaceId": "r93-eth0"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l93",
+      "a": {
+        "deviceId": "r93",
+        "interfaceId": "r93-eth1"
+      },
+      "b": {
+        "deviceId": "r94",
+        "interfaceId": "r94-eth0"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l94",
+      "a": {
+        "deviceId": "r94",
+        "interfaceId": "r94-eth1"
+      },
+      "b": {
+        "deviceId": "r95",
+        "interfaceId": "r95-eth0"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l95",
+      "a": {
+        "deviceId": "r95",
+        "interfaceId": "r95-eth1"
+      },
+      "b": {
+        "deviceId": "r96",
+        "interfaceId": "r96-eth0"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l96",
+      "a": {
+        "deviceId": "r96",
+        "interfaceId": "r96-eth1"
+      },
+      "b": {
+        "deviceId": "r97",
+        "interfaceId": "r97-eth0"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l97",
+      "a": {
+        "deviceId": "r97",
+        "interfaceId": "r97-eth1"
+      },
+      "b": {
+        "deviceId": "r98",
+        "interfaceId": "r98-eth0"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l98",
+      "a": {
+        "deviceId": "r98",
+        "interfaceId": "r98-eth1"
+      },
+      "b": {
+        "deviceId": "r99",
+        "interfaceId": "r99-eth0"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l99",
+      "a": {
+        "deviceId": "r99",
+        "interfaceId": "r99-eth1"
+      },
+      "b": {
+        "deviceId": "r0",
+        "interfaceId": "r0-eth0"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l100",
+      "a": {
+        "deviceId": "r0",
+        "interfaceId": "r0-eth2"
+      },
+      "b": {
+        "deviceId": "r50",
+        "interfaceId": "r50-eth2"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l101",
+      "a": {
+        "deviceId": "r1",
+        "interfaceId": "r1-eth2"
+      },
+      "b": {
+        "deviceId": "r51",
+        "interfaceId": "r51-eth2"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l102",
+      "a": {
+        "deviceId": "r2",
+        "interfaceId": "r2-eth2"
+      },
+      "b": {
+        "deviceId": "r52",
+        "interfaceId": "r52-eth2"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l103",
+      "a": {
+        "deviceId": "r3",
+        "interfaceId": "r3-eth2"
+      },
+      "b": {
+        "deviceId": "r53",
+        "interfaceId": "r53-eth2"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l104",
+      "a": {
+        "deviceId": "r4",
+        "interfaceId": "r4-eth2"
+      },
+      "b": {
+        "deviceId": "r54",
+        "interfaceId": "r54-eth2"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l105",
+      "a": {
+        "deviceId": "r5",
+        "interfaceId": "r5-eth2"
+      },
+      "b": {
+        "deviceId": "r55",
+        "interfaceId": "r55-eth2"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l106",
+      "a": {
+        "deviceId": "r6",
+        "interfaceId": "r6-eth2"
+      },
+      "b": {
+        "deviceId": "r56",
+        "interfaceId": "r56-eth2"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l107",
+      "a": {
+        "deviceId": "r7",
+        "interfaceId": "r7-eth2"
+      },
+      "b": {
+        "deviceId": "r57",
+        "interfaceId": "r57-eth2"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l108",
+      "a": {
+        "deviceId": "r8",
+        "interfaceId": "r8-eth2"
+      },
+      "b": {
+        "deviceId": "r58",
+        "interfaceId": "r58-eth2"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l109",
+      "a": {
+        "deviceId": "r9",
+        "interfaceId": "r9-eth2"
+      },
+      "b": {
+        "deviceId": "r59",
+        "interfaceId": "r59-eth2"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l110",
+      "a": {
+        "deviceId": "r10",
+        "interfaceId": "r10-eth2"
+      },
+      "b": {
+        "deviceId": "r60",
+        "interfaceId": "r60-eth2"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l111",
+      "a": {
+        "deviceId": "r11",
+        "interfaceId": "r11-eth2"
+      },
+      "b": {
+        "deviceId": "r61",
+        "interfaceId": "r61-eth2"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l112",
+      "a": {
+        "deviceId": "r12",
+        "interfaceId": "r12-eth2"
+      },
+      "b": {
+        "deviceId": "r62",
+        "interfaceId": "r62-eth2"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l113",
+      "a": {
+        "deviceId": "r13",
+        "interfaceId": "r13-eth2"
+      },
+      "b": {
+        "deviceId": "r63",
+        "interfaceId": "r63-eth2"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l114",
+      "a": {
+        "deviceId": "r14",
+        "interfaceId": "r14-eth2"
+      },
+      "b": {
+        "deviceId": "r64",
+        "interfaceId": "r64-eth2"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l115",
+      "a": {
+        "deviceId": "r15",
+        "interfaceId": "r15-eth2"
+      },
+      "b": {
+        "deviceId": "r65",
+        "interfaceId": "r65-eth2"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l116",
+      "a": {
+        "deviceId": "r16",
+        "interfaceId": "r16-eth2"
+      },
+      "b": {
+        "deviceId": "r66",
+        "interfaceId": "r66-eth2"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l117",
+      "a": {
+        "deviceId": "r17",
+        "interfaceId": "r17-eth2"
+      },
+      "b": {
+        "deviceId": "r67",
+        "interfaceId": "r67-eth2"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l118",
+      "a": {
+        "deviceId": "r18",
+        "interfaceId": "r18-eth2"
+      },
+      "b": {
+        "deviceId": "r68",
+        "interfaceId": "r68-eth2"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l119",
+      "a": {
+        "deviceId": "r19",
+        "interfaceId": "r19-eth2"
+      },
+      "b": {
+        "deviceId": "r69",
+        "interfaceId": "r69-eth2"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l120",
+      "a": {
+        "deviceId": "r20",
+        "interfaceId": "r20-eth2"
+      },
+      "b": {
+        "deviceId": "r70",
+        "interfaceId": "r70-eth2"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l121",
+      "a": {
+        "deviceId": "r21",
+        "interfaceId": "r21-eth2"
+      },
+      "b": {
+        "deviceId": "r71",
+        "interfaceId": "r71-eth2"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l122",
+      "a": {
+        "deviceId": "r22",
+        "interfaceId": "r22-eth2"
+      },
+      "b": {
+        "deviceId": "r72",
+        "interfaceId": "r72-eth2"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l123",
+      "a": {
+        "deviceId": "r23",
+        "interfaceId": "r23-eth2"
+      },
+      "b": {
+        "deviceId": "r73",
+        "interfaceId": "r73-eth2"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l124",
+      "a": {
+        "deviceId": "r24",
+        "interfaceId": "r24-eth2"
+      },
+      "b": {
+        "deviceId": "r74",
+        "interfaceId": "r74-eth2"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l125",
+      "a": {
+        "deviceId": "r25",
+        "interfaceId": "r25-eth2"
+      },
+      "b": {
+        "deviceId": "r75",
+        "interfaceId": "r75-eth2"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l126",
+      "a": {
+        "deviceId": "r26",
+        "interfaceId": "r26-eth2"
+      },
+      "b": {
+        "deviceId": "r76",
+        "interfaceId": "r76-eth2"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l127",
+      "a": {
+        "deviceId": "r27",
+        "interfaceId": "r27-eth2"
+      },
+      "b": {
+        "deviceId": "r77",
+        "interfaceId": "r77-eth2"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l128",
+      "a": {
+        "deviceId": "r28",
+        "interfaceId": "r28-eth2"
+      },
+      "b": {
+        "deviceId": "r78",
+        "interfaceId": "r78-eth2"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l129",
+      "a": {
+        "deviceId": "r29",
+        "interfaceId": "r29-eth2"
+      },
+      "b": {
+        "deviceId": "r79",
+        "interfaceId": "r79-eth2"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l130",
+      "a": {
+        "deviceId": "r30",
+        "interfaceId": "r30-eth2"
+      },
+      "b": {
+        "deviceId": "r80",
+        "interfaceId": "r80-eth2"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l131",
+      "a": {
+        "deviceId": "r31",
+        "interfaceId": "r31-eth2"
+      },
+      "b": {
+        "deviceId": "r81",
+        "interfaceId": "r81-eth2"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l132",
+      "a": {
+        "deviceId": "r32",
+        "interfaceId": "r32-eth2"
+      },
+      "b": {
+        "deviceId": "r82",
+        "interfaceId": "r82-eth2"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l133",
+      "a": {
+        "deviceId": "r33",
+        "interfaceId": "r33-eth2"
+      },
+      "b": {
+        "deviceId": "r83",
+        "interfaceId": "r83-eth2"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l134",
+      "a": {
+        "deviceId": "r34",
+        "interfaceId": "r34-eth2"
+      },
+      "b": {
+        "deviceId": "r84",
+        "interfaceId": "r84-eth2"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l135",
+      "a": {
+        "deviceId": "r35",
+        "interfaceId": "r35-eth2"
+      },
+      "b": {
+        "deviceId": "r85",
+        "interfaceId": "r85-eth2"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l136",
+      "a": {
+        "deviceId": "r36",
+        "interfaceId": "r36-eth2"
+      },
+      "b": {
+        "deviceId": "r86",
+        "interfaceId": "r86-eth2"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l137",
+      "a": {
+        "deviceId": "r37",
+        "interfaceId": "r37-eth2"
+      },
+      "b": {
+        "deviceId": "r87",
+        "interfaceId": "r87-eth2"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l138",
+      "a": {
+        "deviceId": "r38",
+        "interfaceId": "r38-eth2"
+      },
+      "b": {
+        "deviceId": "r88",
+        "interfaceId": "r88-eth2"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l139",
+      "a": {
+        "deviceId": "r39",
+        "interfaceId": "r39-eth2"
+      },
+      "b": {
+        "deviceId": "r89",
+        "interfaceId": "r89-eth2"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l140",
+      "a": {
+        "deviceId": "r40",
+        "interfaceId": "r40-eth2"
+      },
+      "b": {
+        "deviceId": "r90",
+        "interfaceId": "r90-eth2"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l141",
+      "a": {
+        "deviceId": "r41",
+        "interfaceId": "r41-eth2"
+      },
+      "b": {
+        "deviceId": "r91",
+        "interfaceId": "r91-eth2"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l142",
+      "a": {
+        "deviceId": "r42",
+        "interfaceId": "r42-eth2"
+      },
+      "b": {
+        "deviceId": "r92",
+        "interfaceId": "r92-eth2"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l143",
+      "a": {
+        "deviceId": "r43",
+        "interfaceId": "r43-eth2"
+      },
+      "b": {
+        "deviceId": "r93",
+        "interfaceId": "r93-eth2"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l144",
+      "a": {
+        "deviceId": "r44",
+        "interfaceId": "r44-eth2"
+      },
+      "b": {
+        "deviceId": "r94",
+        "interfaceId": "r94-eth2"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l145",
+      "a": {
+        "deviceId": "r45",
+        "interfaceId": "r45-eth2"
+      },
+      "b": {
+        "deviceId": "r95",
+        "interfaceId": "r95-eth2"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l146",
+      "a": {
+        "deviceId": "r46",
+        "interfaceId": "r46-eth2"
+      },
+      "b": {
+        "deviceId": "r96",
+        "interfaceId": "r96-eth2"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l147",
+      "a": {
+        "deviceId": "r47",
+        "interfaceId": "r47-eth2"
+      },
+      "b": {
+        "deviceId": "r97",
+        "interfaceId": "r97-eth2"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l148",
+      "a": {
+        "deviceId": "r48",
+        "interfaceId": "r48-eth2"
+      },
+      "b": {
+        "deviceId": "r98",
+        "interfaceId": "r98-eth2"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    },
+    {
+      "id": "l149",
+      "a": {
+        "deviceId": "r49",
+        "interfaceId": "r49-eth2"
+      },
+      "b": {
+        "deviceId": "r99",
+        "interfaceId": "r99-eth2"
+      },
+      "latencyMs": 10,
+      "bandwidthMbps": 100,
+      "lossPercent": 0,
+      "queueCapacity": 64,
+      "up": true
+    }
+  ]
+}
