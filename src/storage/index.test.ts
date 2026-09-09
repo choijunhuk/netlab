@@ -111,6 +111,23 @@ describe('project persistence', () => {
     expect(() => validateDocument(doc)).not.toThrow()
     expect(createDevice('router', doc.devices).interfaces).toHaveLength(4)
   })
+  it.each(['pc2', 'pc2-eth0'])(
+    'reserves imported link ID %s when adding or duplicating',
+    (linkId) => {
+      const doc = fixture()
+      doc.links[0].id = linkId
+      expect(() => validateDocument(doc)).not.toThrow()
+      const occupiedIds = doc.links.map((link) => link.id)
+      const created = createDevice('pc', doc.devices, undefined, occupiedIds)
+      const duplicate = duplicateDevice(doc.devices[0], doc.devices, occupiedIds)
+      for (const device of [created, duplicate]) {
+        expect(device.id).toBe('pc3')
+        expect(() =>
+          importDocument(exportDocument({ ...doc, devices: [...doc.devices, device] })),
+        ).not.toThrow()
+      }
+    },
+  )
   it('propagates unavailable autosave storage errors', async () => {
     await expect(saveAutosave(fixture())).rejects.toThrow(/IndexedDB/)
     await expect(loadAutosave()).rejects.toThrow(/IndexedDB/)

@@ -5,10 +5,12 @@ export function createDevice(
   kind: DeviceKind,
   existing: DeviceConfig[],
   position = { x: 100, y: 100 },
+  occupiedIds: string[] = [],
 ): DeviceConfig {
-  const usedIds = new Set(
-    existing.flatMap((device) => [device.id, ...device.interfaces.map((intf) => intf.id)]),
-  )
+  const usedIds = new Set([
+    ...occupiedIds,
+    ...existing.flatMap((device) => [device.id, ...device.interfaces.map((intf) => intf.id)]),
+  ])
   const usedMacs = new Set(
     existing.flatMap((device) => device.interfaces.map((intf) => intf.mac.toLowerCase())),
   )
@@ -49,11 +51,20 @@ export function createDevice(
     ...(kind === 'server' ? { services: { udpEcho: 7, tcpEcho: 7, http: true } } : {}),
   }
 }
-export function duplicateDevice(device: DeviceConfig, existing: DeviceConfig[]): DeviceConfig {
-  const fresh = createDevice(device.kind, [...existing, device], {
-    x: device.position.x + 40,
-    y: device.position.y + 40,
-  })
+export function duplicateDevice(
+  device: DeviceConfig,
+  existing: DeviceConfig[],
+  occupiedIds: string[] = [],
+): DeviceConfig {
+  const fresh = createDevice(
+    device.kind,
+    [...existing, device],
+    {
+      x: device.position.x + 40,
+      y: device.position.y + 40,
+    },
+    occupiedIds,
+  )
   fresh.name = `${device.name.slice(0, 95)} copy`
   // Only copy non-address service settings. Routes, NAT and DHCP depend on old ports/IPs.
   if (device.services) fresh.services = { ...device.services }
@@ -91,7 +102,12 @@ function add(
   y: number,
   customId?: string,
 ): DeviceConfig {
-  const device = createDevice(kind, doc.devices, { x, y })
+  const device = createDevice(
+    kind,
+    doc.devices,
+    { x, y },
+    doc.links.map((link) => link.id),
+  )
   if (customId) {
     device.id = customId
     device.name = customId.toUpperCase()
